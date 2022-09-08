@@ -1,12 +1,12 @@
 import React from 'react'
-import NavBar from '../components/NavBar';
 import RandomFeed from '../components/RandomFeed';
+import SideBar from '../components/SideBar';
+import SavedFeed from '../components/SavedFeed';
+import OwnFeed from '../components/OwnFeed';
 
 const Profile = () => {
   return (
     <div>
-        <NavBar />
-
         <SideBar />
         <RandomFeed />
         <SavedFeed />

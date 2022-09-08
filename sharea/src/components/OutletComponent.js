@@ -12,4 +12,4 @@ function OutletComponent() {
   )
 }
 
-export default Outlet
+export default OutletComponent
