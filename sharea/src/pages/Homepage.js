@@ -5,8 +5,8 @@ import SideBar from '../components/SideBar';
 const Homepage = () => {
   return (
     <div>
-        <Feed />
         <SideBar />
+        <Feed />
     </div>
   )
 }

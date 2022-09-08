@@ -7,7 +7,6 @@ import OwnFeed from '../components/OwnFeed';
 const Profile = () => {
   return (
     <div>
-        <SideBar />
         <RandomFeed />
         <SavedFeed />
         <OwnFeed />

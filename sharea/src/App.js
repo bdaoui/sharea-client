@@ -12,9 +12,9 @@ function App() {
     <Routes>
       <Route element={< OutletComponent /> } >
         <Route path={"/" }  element={< Landing /> } />
-        <Route path={"/Homepage" }  element={< Homepage /> } />
-        <Route path={"/Login" }  element={< LogIn /> } />
-        <Route path={"/Profile" }  element={< Profile /> } />
+        <Route path={"/homepage" }  element={< Homepage /> } />
+        <Route path={"/login" }  element={< LogIn /> } />
+        <Route path={"/profile" }  element={< Profile /> } />
       </Route>
     </Routes>
     
