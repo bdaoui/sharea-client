@@ -3,7 +3,7 @@ import {Routes, Route } from "react-router-dom";
 import OutletComponent from "../src/components/OutletComponent";
 import Landing from './pages/Landing';
 import Homepage from './pages/Homepage';
-import LogIn from './pages/LogIn';
+import Auth from './pages/Auth';
 import Profile from './pages/Profile';
 
 function App() {
@@ -13,7 +13,7 @@ function App() {
       <Route element={< OutletComponent /> } >
         <Route path={"/" }  element={< Landing /> } />
         <Route path={"/homepage" }  element={< Homepage /> } />
-        <Route path={"/login" }  element={< LogIn /> } />
+        <Route path={"/login" }  element={< Auth /> } />
         <Route path={"/profile" }  element={< Profile /> } />
       </Route>
     </Routes>

@@ -2,14 +2,16 @@ import React from 'react'
 import LoginForm from '../components/LoginForm';
 import SignUpForm from '../components/SignUpForm';
 
-function LogIn() {
+function Auth() {
+
+
+
+    
   return (
     <div>
-    <LoginForm />
-    <SignUpForm />
-
+      <SignUpForm />
     </div>
   )
 }
 
-export default LogIn
+export default Auth;
