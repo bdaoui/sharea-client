@@ -4,13 +4,14 @@ import "./NavBar.css"
 
 const NavBar = () => {
 
+    // Set conditional to listen to window size and inject that size into status
+    // use status to determine when to display Links otherwise present in sidebar
+
     const [screen, setScreen] = useState(window.innerWidth);
 
     const resizeScreen = () =>{
         setScreen(window.innerWidth);
     }
-
-  
 
     window.addEventListener('resize', resizeScreen);
     
