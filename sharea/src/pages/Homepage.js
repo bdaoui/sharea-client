@@ -4,7 +4,7 @@ import SideBar from '../components/SideBar';
 
 const Homepage = () => {
   return (
-    <div>
+    <div style={{display: "flex"}}>
         <SideBar />
         <Feed />
     </div>

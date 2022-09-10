@@ -1,18 +1,165 @@
-import React from 'react'
-import RandomFeed from '../components/RandomFeed';
-import SideBar from '../components/SideBar';
-import SavedFeed from '../components/SavedFeed';
-import OwnFeed from '../components/OwnFeed';
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+// import the service since we need it to send (and get) the data to(from) the server
+import service from "../context/AppContext";
 
-const Profile = () => {
+function Profile() {
+  const [name, setName] = useState("");
+  const [imageUrl, setImageUrl] = useState("");
+
+  const navigate = useNavigate();
+
+  // ******** this function handles the file upload ********
+  const handleFileUpload = (e) => {
+    // console.log("The file to be uploaded is: ", e.target.files[0]);
+
+    const uploadData = new FormData();
+
+    // imageUrl => this name has to be the same as in the model since we pass
+    // req.body to .create() method when creating a new movie in '/api/movies' POST route
+    uploadData.append("imageUrl", e.target.files[0]);
+
+    service
+      .uploadImage(uploadData)
+      .then((response) => {
+        // console.log("response is: ", response);
+        // response carries "fileUrl" which we can use to update the state
+        setImageUrl(response.fileUrl);
+      })
+      .catch((err) => console.log("Error while uploading the file: ", err));
+  };
+
+  // ******** this function submits the form ********
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    console.log("can I access this? ", imageUrl)
+
+    service
+      .createImage({ name, imageUrl })
+      .then((res) => {
+
+        // console.log("added new movie: ", res);
+        // Reset the form
+        setName("");
+        setImageUrl("");
+
+        // navigate to another page
+        navigate("/homepage");
+      })
+      .catch((err) => console.log("Error while adding the new image: ", err));
+  };
+
   return (
     <div>
-        <RandomFeed />
-        <SavedFeed />
-        <OwnFeed />
+      <h2>New Image</h2>
+      <form onSubmit={handleSubmit}>
+        <label>Name</label>
+        <input
+          type="text"
+          name="name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
 
+        <input type="file" onChange={(e) => handleFileUpload(e)} />
+
+        <button type="submit">Upload Image</button>
+      </form>
     </div>
-  )
+  );
 }
 
-export default Profile
+export default Profile;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import React, {useState} from 'react';
+// import Axios from "axios";
+
+// import RandomFeed from '../components/RandomFeed';
+// import SavedFeed from '../components/SavedFeed';
+// import OwnFeed from '../components/OwnFeed';
+
+
+
+
+
+// const Profile = () => {
+
+//     const [imageName, setImageName] = useState( "");
+//     const [imageUrl, setImageUrl] = useState("");
+
+
+//     const [previewImage, setPreviewImage] = useState("");
+
+
+
+//     const handleUpload = (e) =>{
+      
+//         const uploadData = new FormData();
+//         uploadData.append("imageUrl", e.target.files[0]);        
+
+//     }
+
+   
+
+
+//     const handleSubmit = (e) =>{
+//         e.preventDefault();
+        
+
+//         Axios.post("http://localhost:3001/api/image", uploadData )
+//         .then(response => console.log(response))
+//         .catch(err => console.log(err));
+
+           
+    
+
+  
+//     }
+
+
+//   return (
+//     <div>
+//         <RandomFeed />
+//         <SavedFeed />
+//         <OwnFeed />
+        
+//         <form onSubmit={handleSubmit} encType="multipart/form-data">
+//             <input type="text" value={imageName} name="name" onChange={(e) =>{ setImageName(e.target.value)}} /> 
+//             <input type="file" name="image" value={imageUrl} onChange={(e) => handleUpload(e)} />
+//             <button type='submit'>Upload</button>
+//         </form>
+
+        
+        
+
+//     </div>
+//   )
+// }
+
+// export default Profile
+
+

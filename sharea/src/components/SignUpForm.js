@@ -9,6 +9,7 @@ const SignUpForm = () => {
     const [userValue, setUserValue] = useState({
         username: "",
         password: "",
+        email: "",
     })
 
     // const userNameRef = useRef();
@@ -32,7 +33,7 @@ const SignUpForm = () => {
     const handleSubmit = (e) =>{
         e.preventDefault();
 
-        Axios.post("http://localhost:5000/auth/signup", userValue)
+        Axios.post("http://localhost:3001/api/signup", userValue)
             .then(response => console.log(response))
             .catch(err => console.log(err));
 
@@ -50,7 +51,7 @@ const SignUpForm = () => {
         <form onSubmit={handleSubmit} >
             <input type="text" value={userValue.name} name="username" onChange={handleUser} /> 
             <input type='password'  value={userValue.password} name="password" onChange={handleUser} />
-            <input type='email' />
+            <input type='email' value={userValue.email} name="email" onChange={handleUser} />
             <button type='submit'> Sign Up</button>
         </form>
 

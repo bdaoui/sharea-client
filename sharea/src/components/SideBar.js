@@ -37,7 +37,7 @@ const SideBar = () => {
 
 
   return (
-    <div style={{height: '100vh', position: "relative"}}>
+    <div style={{height: '100vh', position: "relative", width: "25vw"}}>
       <ProSidebar collapsed={collapse} breakPoint='sm'>
         <SidebarHeader >
 

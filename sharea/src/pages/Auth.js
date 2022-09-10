@@ -9,7 +9,8 @@ function Auth() {
     
   return (
     <div>
-      <SignUpForm />
+    <SignUpForm />
+    <LoginForm />
     </div>
   )
 }
