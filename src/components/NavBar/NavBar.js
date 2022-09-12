@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import { useNavigate } from 'react-router-dom';
 import { NavLink, Button } from 'react-bootstrap';
 import "./NavBar.css"
-import service from '../context/AppContext';
+import service from '../../context/AppContext';
 import axios from 'axios'
 
 const NavBar = () => {

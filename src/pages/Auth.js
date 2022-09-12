@@ -1,9 +1,9 @@
 import React, {useState} from 'react'
-import LoginForm from '../components/LoginForm';
-import SignUpForm from '../components/SignUpForm';
+import Login from '../components/Auth/Login';
+import Signup from '../components/Auth/Signup';
 
 function Auth() {
-  const [check, setCheck] = useState(false)
+  const [check, setCheck] = useState(true)
 
   const signUp = () => {
     if(check){
@@ -16,8 +16,8 @@ function Auth() {
 
   return (
     <div>
-    {!check && <LoginForm />}
-    {check && <SignUpForm check={check}/>}
+    {!check && <Login/>}
+    {check && <Signup/>}
 
     <a onClick={signUp}> {check ? "Already part of the family ? Log In" :  "New here? Sign Up to get access"} </a>
 

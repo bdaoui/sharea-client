@@ -1,4 +1,4 @@
-import React, {useRef, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {useNavigate, Link} from "react-router-dom";
 import {Container, Row, Col, Form, Button} from 'react-bootstrap'
 import Axios from "axios";
@@ -9,15 +9,18 @@ const LoginForm = () => {
     
     const [password, setPassword] = useState("");
     const [username, setUsername] = useState("");
+    const [cUser, setCUser] = useState("")
 
     const handleLogin = (e) =>{
         e.preventDefault();
 
-        Axios.post("http://localhost:3001/api/signin", { username, password })
-            .then(response => console.log(response))
+        Axios
+            .post("http://localhost:3001/api/signin", { username, password })
+            .then(response => setCUser(response.data.currentUser._id))
             .catch(err => console.log(err));
-            navigate("/");
+            navigate("/homepage");
     }
+
 
     // const handleauth = () => {
     //     console.log('hello')

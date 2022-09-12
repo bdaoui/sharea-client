@@ -1,7 +1,6 @@
 import './App.css';
 import {Routes, Route } from "react-router-dom";
-import OutletComponent from "../src/components/OutletComponent";
-import Landing from './pages/Landing';
+import OutletComponent from "./components/NavBar/OutletComponent";
 import Homepage from './pages/Homepage';
 import Auth from './pages/Auth';
 import Profile from './pages/Profile';
@@ -18,8 +17,7 @@ function App() {
         <Route path={"/homepage" }  element={< Homepage /> } />
         <Route path={"/profile" }  element={< Profile /> } />
 
-        <Route path={"/" }  element={< Landing /> } />
-        <Route path={"/login" }  element={< Auth /> } />
+        <Route path={"/" }  element={< Auth /> } />
 
       </Route>
     </Routes>
