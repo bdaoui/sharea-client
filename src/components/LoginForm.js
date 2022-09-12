@@ -21,6 +21,9 @@ const LoginForm = () => {
     //     // email: userEmailRef.current.value,        
     // }
 
+    
+
+
     const handleUser = (e) =>{
         let name = e.target.name;
         let value = e.target.value;
@@ -35,6 +38,7 @@ const LoginForm = () => {
         Axios.post("http://localhost:3001/api/signin", userValue)
             .then(response => console.log(response))
             .catch(err => console.log(err));
+
 
         navigate("/");
 
