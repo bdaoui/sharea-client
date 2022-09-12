@@ -3,14 +3,11 @@ import {useNavigate , Link} from "react-router-dom";
 import Axios from "axios";
 import {Col, Container, Row, Form, Button} from "react-bootstrap";
 
-const SignUpForm = () => {
+const SignUpForm = (check) => {
     const navigate = useNavigate();
-
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [username, setUsername] = useState("");
-
-
 
     const handleSubmit = (e) =>{
         e.preventDefault();
@@ -18,17 +15,11 @@ const SignUpForm = () => {
         Axios.post("http://localhost:3001/api/signup", {email, password, username})
             .then(response => console.log(response))
             .catch(err => console.log(err));
-
-        navigate("/");
-
+            navigate("/login");
+            check(false)
     }
 
-    
-
-
-
   return (
-
     <Container>
     <Row>
         <Col md={7} className="d-flex align-items-center justify-content-center flex-direction-column">

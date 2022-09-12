@@ -7,14 +7,20 @@ import Auth from './pages/Auth';
 import Profile from './pages/Profile';
 
 function App() {
+  //middleware and protect
+
   return (
     <div className="App">
+
     <Routes>
       <Route element={< OutletComponent /> } >
-        <Route path={"/" }  element={< Landing /> } />
+      
         <Route path={"/homepage" }  element={< Homepage /> } />
-        <Route path={"/login" }  element={< Auth /> } />
         <Route path={"/profile" }  element={< Profile /> } />
+
+        <Route path={"/" }  element={< Landing /> } />
+        <Route path={"/login" }  element={< Auth /> } />
+
       </Route>
     </Routes>
     

@@ -17,7 +17,7 @@ function Auth() {
   return (
     <div>
     {!check && <LoginForm />}
-    {check && <SignUpForm />}
+    {check && <SignUpForm check={check}/>}
 
     <a onClick={signUp}> {check ? "Already part of the family ? Log In" :  "New here? Sign Up to get access"} </a>
 
