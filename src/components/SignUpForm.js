@@ -58,11 +58,7 @@ const SignUpForm = () => {
                 <Button variant="primary" type="submit" className="btn-primary">
              
                 </Button>
-                <div className="py-4">
-                    <p className="text-center">
-                        Already part of the family ? <Link to="/login">Login</Link>
-                    </p>
-                </div>
+           
             </Form>
         </Col>
         <Col md={5} className="signup__bg"></Col>
