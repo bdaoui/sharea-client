@@ -5,20 +5,15 @@ import service from "../context/AppContext";
 
 function Profile() {
   const [name, setName] = useState("");
-  
-  
-
   const navigate = useNavigate();
 
   // ******** this function submits the form ********
   const handleSubmit =  (e) => {
     e.preventDefault();
 
-    
     const uploadData = new FormData();
     uploadData.append("imageUrl", e.target.image.files[0]);
     uploadData.append("name", name);
-
 
     service
     .uploadImage(uploadData)
@@ -28,9 +23,6 @@ function Profile() {
 
     })
     .catch((err) => console.log("Error while uploading the file: ", err));
-
-
-
   }
 
   return (
@@ -55,4 +47,3 @@ function Profile() {
 }
 
 export default Profile;
-

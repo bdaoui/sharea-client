@@ -1,5 +1,4 @@
 // src/api/service.js
-
 import axios from "axios";
 
 const service = axios.create({
@@ -34,4 +33,11 @@ const createImage = (newImage) => {
     .catch(errorHandler);
 };
 
-export default { service, image, uploadImage, createImage};
+const handleLogout = () => {
+  return service
+    .post('/logout')
+    .then((res) => res.data)
+    .catch(errorHandler)
+}
+
+export default { service, image, uploadImage, createImage, handleLogout};
