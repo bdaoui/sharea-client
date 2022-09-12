@@ -50,7 +50,7 @@ const LoginForm = () => {
         <form onSubmit={handleSubmit} >
             <input type="text" value={userValue.name} name="username" onChange={handleUser} /> 
             <input type='password'  value={userValue.password} name="password" onChange={handleUser} />
-            <button type='submit'> Sign Up</button>
+            <button type='submit'>Log In!!!</button>
         </form>
 
 

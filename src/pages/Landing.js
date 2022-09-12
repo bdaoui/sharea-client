@@ -1,6 +1,6 @@
 import React from 'react'
 import RandomFeed from "../components/RandomFeed";
-import Auth from "../components/Auth";
+import Auth from "./Auth";
 
 function Landing() {
   return (
