@@ -14,7 +14,6 @@ function Auth() {
 
   }
 
-    
   return (
     <div>
     {!check && <LoginForm />}
