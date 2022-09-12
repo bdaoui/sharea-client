@@ -55,7 +55,7 @@ const SignUpForm = () => {
                     <Form.Label>Password</Form.Label>
                     <Form.Control type="password" placeholder="Password"  onChange={(e) => setPassword(e.target.value)} value={password} />
                 </Form.Group>
-                <Button variant="primary" type="submit" class="btn-primary">
+                <Button variant="primary" type="submit" className="btn-primary">
              
                 </Button>
                 <div className="py-4">
