@@ -26,7 +26,7 @@ const Feed = () => {
         
         return <div key={image._id} >
           <h3>{image.name}</h3> 
-          <img src={image.imageUrl} alt={image.name} />
+          <img src={image.imageUrl} alt={image.name} style={{height: "300px", width: "400px"}} />
         </div>
       }
     )}

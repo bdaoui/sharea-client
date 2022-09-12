@@ -3,9 +3,8 @@
 import axios from "axios";
 
 const service = axios.create({
-  // make sure you use PORT = 5005 (the port where our server is running)
+  // make sure you use PORT = 3001 (the port where our server is running)
   baseURL: "http://localhost:3001/api",
-  // withCredentials: true // => you might need this when having the users in the app
 });
 
 const errorHandler = (err) => {
@@ -27,12 +26,8 @@ const uploadImage = (file) => {
 };
 
 const createImage = (newImage) => {
-  console.log("new image in service: ", newImage)
-
-  const {name, imageUrl} = newImage;
-
-  console.log(name, imageUrl)
-
+  // console.log("new image in service: ", newImage)
+  
   return service
     .post("/image", newImage)
     .then((res) => res.data)

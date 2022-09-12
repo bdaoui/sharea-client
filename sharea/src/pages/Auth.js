@@ -6,11 +6,12 @@ function Auth() {
 
 
 
+
     
   return (
     <div>
-    <SignUpForm />
     <LoginForm />
+    <SignUpForm />
     </div>
   )
 }
