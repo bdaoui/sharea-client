@@ -1,9 +1,9 @@
 import './App.css';
 import {Routes, Route } from "react-router-dom";
 import OutletComponent from "./components/NavBar/OutletComponent";
-import Homepage from './pages/Homepage';
-import Auth from './pages/Auth';
-import Profile from './pages/Profile';
+import Homepage from './Pages/Homepage';
+import Auth from './Pages/Auth';
+import Profile from './Pages/Profile';
 
 function App() {
   //middleware and protect

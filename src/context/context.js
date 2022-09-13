@@ -1,8 +1,8 @@
 import { createContext, useState, useEffect } from "react";
-import axios from "axios";
-import { baseURL } from "./AppContext";
 const AuthContext = createContext()
 function Context(props) {
+
+    
   const [user, setUser] = useState(null);
   const authenticateUser = async () =>{
     const token = await JSON.parse(localStorage.getItem("token"));  
