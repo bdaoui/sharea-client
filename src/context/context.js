@@ -1,6 +1,6 @@
 import { createContext, useState, useEffect } from "react";
 import axios from "axios";
-import { baseURL } from "./Appcontext";
+import { baseURL } from "./AppContext";
 const AuthContext = createContext()
 function Context(props) {
   const [user, setUser] = useState(null);
