@@ -1,7 +1,12 @@
+<<<<<<< HEAD
 import React, {useState} from 'react'
 import Feed from "../components/Feed";
 import SideBar from '../components/SideBar';
 import Axios from "axios";
+=======
+import React from 'react'
+import Feed from "../components/Profile/Feed";
+>>>>>>> 3a1f57b6f01e81cee979afccd7935f6ddb5b4637
 import Auth from './Auth';
 
 const Homepage = () => {
@@ -17,9 +22,7 @@ const Homepage = () => {
 
   return (
     <div style={{display: "flex"}}>
-        <SideBar />
         <Feed />
-        <Auth />
     </div>
   )
 }

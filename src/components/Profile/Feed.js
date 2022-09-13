@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import service from "../context/AppContext";
+import service from "../../context/AppContext";
 
 
 const Feed = () => {

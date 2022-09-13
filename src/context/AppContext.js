@@ -1,9 +1,11 @@
 // src/api/service.js
 import axios from "axios";
 
+
+const baseURL = "http://localhost:3001/api"
+
 const service = axios.create({
-  // make sure you use PORT = 3001 (the port where our server is running)
-  baseURL: "http://localhost:3001/api",
+  baseURL
 });
 
 const errorHandler = (err) => {
@@ -40,4 +42,4 @@ const handleLogout = () => {
     .catch(errorHandler)
 }
 
-export default { service, image, uploadImage, createImage, handleLogout};
+export default { baseURL, service, image, uploadImage, createImage, handleLogout};
