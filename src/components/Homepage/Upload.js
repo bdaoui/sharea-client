@@ -1,0 +1,47 @@
+import React, {useState} from "react";
+import { useNavigate } from "react-router-dom";
+import service from "../../Context/AppContext";
+
+
+const Upload = () =>  {
+  const [name, setName] = useState("");
+  const navigate = useNavigate();
+
+  // ******** this function submits the form ********
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const uploadData = new FormData();
+    uploadData.append("imageUrl", e.target.image.files[0]);
+    uploadData.append("name", name);
+
+    service
+      .uploadImage(uploadData)
+      .then((response) => {
+        console.log(response);
+        navigate("/homepage");
+      })
+      .catch((err) => console.log("Error while uploading the file: ", err));
+  };
+
+  return (
+    <div>
+      <h2>New Image</h2>
+      <form onSubmit={handleSubmit}>
+        <label>Name</label>
+        <input
+          type="text"
+          name="name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
+
+        <input type="file" name="image" />
+
+        <button type="submit">Upload Image</button>
+      </form>
+    </div>
+  );
+}
+
+export default Upload;
