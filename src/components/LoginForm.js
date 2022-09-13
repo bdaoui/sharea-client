@@ -19,12 +19,7 @@ const LoginForm = () => {
             navigate("/");
     }
 
-    // const handleauth = () => {
-    //     console.log('hello')
-    //     Axios.post('http://localhost:3001/api/auth')
-    //     .then((res) => console.log(res))
-    //     .catch((err) => console.log(err))
-    // }
+
 
   return (
     <div>
