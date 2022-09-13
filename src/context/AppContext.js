@@ -38,7 +38,7 @@ const createImage = (newImage) => {
 const handleLogout = () => {
   return service
     .post('/logout')
-    .then((res) => res.data)
+    .then( localStorage.removeItem("token") )
     .catch(errorHandler)
 }
 

@@ -6,25 +6,47 @@ const AuthContext = createContext()
 
 function Context(props) {
   const [user, setUser] = useState(null);
-  
-  useEffect(() => {
-    const getUser = axios
-        .get("http://localhost:3001/api/auth")
-        .then((res) => console.log(res.data))
-        .catch((err) => console.log(err))
-  }, []);
-  // const authenticateUser = async () => {
-  //   try {
-  //     await axios.get(`${baseURL}/api/user`, {
-  //     withCredentials: true,
-  //   });
-     
-  //   } catch (err) {
-  //     console.log("There was an error getting your events", err);
-  //     setError(err.data);
-  //     setFetchingUser(false);
-  //   }
-  // };
+
+  const authenticateUser = async () =>{
+    const token = await JSON.parse(localStorage.getItem("token"));  
+    console.log("this is token ", token)
+    if(token){
+      await setUser(token)
+    }
+    else{
+      console.log("not working")
+    }
+  }
+
+
+  useEffect(() => { 
+    // const data = localStorage.getItem("token");
+    // const getUser = () => {setUser(data)} 
+    // console.log("this is data ", data, "This is user", user)
+    // getUser();
+
+    authenticateUser();
+
+  },[]);
+  console.log("this is working? ",  user)
+
+//   const authenticateUser = () => {
+//     const token = localStorage.getItem('authToken'); // load the value for property with key 'authToken'
+
+//     if(token) {
+//         // update a state variable user that will carry the user information throughout the app
+//         })
+//         .catch(err => console.log(err))
+//     }
+//     else {
+//         setIsLoggedIn(false)
+//         setUser(null)
+//         setIsLoading(true)
+//     }
+// }
+// [6:07 PM]  useEffect(() => { // each time the app loads, we check if a JWT is valid 
+//     authenticateUser();
+// }, [])
 
   return (
 

@@ -1,22 +1,12 @@
 import React, {useState} from 'react'
-import { useNavigate } from 'react-router-dom';
-import { NavLink, Button } from 'react-bootstrap';
+import { useNavigate, NavLink } from 'react-router-dom';
+import { Nav, Navbar, Container, Button, NavDropdown, LinkContainer } from "react-bootstrap";
 import "./NavBar.css"
 import service from '../../context/AppContext';
 import axios from 'axios'
 
 const NavBar = () => {
-    // Set conditional to listen to window size and inject that size into status
-    // use status to determine when to display Links otherwise present in sidebar
-    const [screen, setScreen] = useState(window.innerWidth);
     const navigate = useNavigate();
-
-    const resizeScreen = () =>{
-        setScreen(window.innerWidth);
-    }
-    window.addEventListener('resize', resizeScreen);
-    console.log(screen)
-
     function doLogout () {
         service
             .handleLogout()
@@ -24,17 +14,51 @@ const NavBar = () => {
     }
 
   return (
-    <div className='navbar'>
+    <div className='navbar dark light'>
 
-        {
-            screen <= 600 && <div>
-                <NavLink to="/homepage" className="Links" >Homepage</NavLink>
-                <NavLink to="/profile" className="Links" >Profile</NavLink>
+        <NavLink to="/homepage" className="Links dark" >Homepage</NavLink>
+        <NavLink to="/profile" className="Links dark" >Profile</NavLink>
 
-            </div>
-        }
-        <NavLink to="/login" className="Links">Log In</NavLink>
-        <Button onClick={doLogout} className="Links">Log Out</Button>
+        <NavLink to="/" className="Links dark">Log In</NavLink>
+        <Button onClick={doLogout}  className="Links dark btn-danger ">Log Out</Button>
+
+{/* <Navbar bg="dark" expand="lg">
+            <Container>
+
+                <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                <Navbar.Collapse id="basic-navbar-nav">
+                    <Nav className="ms-auto">
+                      
+                            <LinkContainer to="/login">
+                                <Nav.Link>Login</Nav.Link>
+                            </LinkContainer>
+                    
+                        <LinkContainer to="/chat">
+                            <Nav.Link>Chat</Nav.Link>
+                        </LinkContainer>
+                        <LinkContainer to="/feed">
+                            <Nav.Link>Feed</Nav.Link>
+                        </LinkContainer>
+                       
+                            <NavDropdown
+                                
+                                id="basic-nav-dropdown"
+                            >
+                                <NavDropdown.Item href="/profile">Profile</NavDropdown.Item>
+                                <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
+                                <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+
+                                <NavDropdown.Item>
+                                    <Button variant="danger" >
+                                        Logout
+                                    </Button>
+                                </NavDropdown.Item>
+                            </NavDropdown>
+                    
+                    </Nav>
+                </Navbar.Collapse>
+            </Container>
+        </Navbar> */}
 
     </div>
   )

@@ -17,10 +17,14 @@ const LoginForm = () => {
 
         Axios
             .post("http://localhost:3001/api/signin", { username, password })
-            .then(response => setUser(response.data.currentUser._id))
+            .then(response => {
+                localStorage.setItem("token", JSON.stringify(response.data))
+                setUser(response.data)
+            })
             .catch(err => console.log(err));
-            navigate("/homepage");
             console.log(user);
+
+            navigate("/homepage");
     }
     
 

@@ -1,17 +1,12 @@
 .navbar{
-    background-color:#1d1d1d ;
-    height: 12.5vh;
-    width: 100vw;
-    position: sticky;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 300px;
-
+    
 }
 
-.Links{
+.dark{
+    background-color: black;
     color: white;
-    padding: 5%;
-}
+    text-decoration: none;
+
+    padding:1%
+
+}   

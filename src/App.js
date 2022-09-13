@@ -13,12 +13,12 @@ function App() {
   
     <Routes>
     
-      <Route element={< OutletComponent /> } >
+      <Route element={<OutletComponent /> } >
       
-        <Route path={"/homepage" }  element={< Homepage /> } />
-        <Route path={"/profile" }  element={< Profile /> } />
+        <Route path={"/homepage" }  element={<Homepage /> } />
+        <Route path={"/profile" }  element={<Profile /> } />
 
-        <Route path={"/" }  element={< Auth /> } />
+        <Route path={"/" }  element={<Auth /> } />
 
       </Route>
     </Routes>
