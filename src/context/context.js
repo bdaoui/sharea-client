@@ -9,7 +9,7 @@ function Context(props) {
 
   const authenticateUser = async () =>{
     const token = await JSON.parse(localStorage.getItem("token"));  
-    console.log("this is token ", token)
+    console.log("this is token on context.js", token)
     if(token){
       await setUser(token)
     }
@@ -18,17 +18,15 @@ function Context(props) {
     }
   }
 
-
   useEffect(() => { 
-    // const data = localStorage.getItem("token");
+    authenticateUser();
+  },[]);
+  console.log("this is working? on context.js",  user)
+  
+// const data = localStorage.getItem("token");
     // const getUser = () => {setUser(data)} 
     // console.log("this is data ", data, "This is user", user)
     // getUser();
-
-    authenticateUser();
-
-  },[]);
-  console.log("this is working? ",  user)
 
 //   const authenticateUser = () => {
 //     const token = localStorage.getItem('authToken'); // load the value for property with key 'authToken'
