@@ -10,8 +10,9 @@ function App() {
 
   return (
     <div className="App">
-
+  
     <Routes>
+    
       <Route element={< OutletComponent /> } >
       
         <Route path={"/homepage" }  element={< Homepage /> } />
@@ -21,7 +22,7 @@ function App() {
 
       </Route>
     </Routes>
-    
+
     </div>
   );
 }

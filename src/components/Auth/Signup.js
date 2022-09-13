@@ -3,7 +3,7 @@ import {useNavigate , Link} from "react-router-dom";
 import Axios from "axios";
 import {Col, Container, Row, Form, Button} from "react-bootstrap";
 
-const SignUpForm = () => {
+const SignUpForm = ({signUp}) => {
     const navigate = useNavigate();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -11,7 +11,7 @@ const SignUpForm = () => {
 
     const handleSubmit = (e) =>{
         e.preventDefault();
-
+        signUp()
         Axios.post("http://localhost:3001/api/signup", {email, password, username})
             .then(response => console.log(response))
             .catch(err => console.log(err));

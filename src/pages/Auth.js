@@ -6,6 +6,7 @@ function Auth() {
   const [check, setCheck] = useState(true)
 
   const signUp = () => {
+    console.log(check)
     if(check){
       return setCheck(false);
     }
@@ -17,7 +18,7 @@ function Auth() {
   return (
     <div>
     {!check && <Login/>}
-    {check && <Signup/>}
+    {check && <Signup signUp={signUp}/>}
 
     <a onClick={signUp}> {check ? "Already part of the family ? Log In" :  "New here? Sign Up to get access"} </a>
 
