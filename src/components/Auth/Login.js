@@ -6,6 +6,8 @@ import {AuthContext} from '../../Context/Context';
 const LoginForm = () => {
     const navigate = useNavigate();
     const {user, setUser} = useContext(AuthContext)
+    const {toggle, setToggle} = useContext(AuthContext)
+
     const [password, setPassword] = useState("");
     const [username, setUsername] = useState("");
     
@@ -21,6 +23,14 @@ const LoginForm = () => {
             console.log('user on login.js', user);
             navigate("/homepage");
     }
+
+    const toggler = () => {
+        if(toggle === false){
+            setToggle(true)
+        } else {
+            setToggle(false)
+        }
+    } 
     
   return (
     <div className="relative flex flex-col justify-center min-h-screen overflow-hidden">
@@ -66,6 +76,9 @@ const LoginForm = () => {
                     Login
                 </button>
             </div>
+
+            <a onClick={toggler}>Already part of the family? Log In</a>
+            
         </form>
     </div>
 </div>

@@ -1,27 +1,37 @@
-import React, {useRef, useState} from 'react';
+import React, {useState, useContext} from 'react';
 import {useNavigate , Link} from "react-router-dom";
 import Axios from "axios";
-import { LockClosedIcon } from '@heroicons/react/solid'
+import {AuthContext} from '../../Context/Context';
 
-const SignUpForm = ({signUp}) => {
+
+const SignUpForm = () => {
     const navigate = useNavigate();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [username, setUsername] = useState("");
+    const {toggle, setToggle} = useContext(AuthContext);
 
+console.log(toggle)
     const handleSubmit = (e) =>{
         e.preventDefault();
-        signUp()
         Axios.post("http://localhost:3001/api/signup", {email, password, username})
             .then(response => console.log(response))
             .catch(err => console.log(err));
             navigate("/");
     }
 
+    const toggler = () => {
+        if(toggle === false){
+            setToggle(true)
+        } else {
+            setToggle(false)
+        }
+    } 
+
   return (
     <div className="relative flex flex-col justify-center min-h-screen overflow-hidden">
             <div className="w-full p-6 m-auto bg-white rounded-md shadow-xl shadow-gray-600/40 ring-2 ring-gray-600 lg:max-w-xl">
-                
+
                 <h1 className="text-3xl font-semibold text-center text-gray-700 uppercase decoration-wavy">
                     Create an account
                 </h1>
@@ -57,7 +67,6 @@ const SignUpForm = ({signUp}) => {
                         <label
                             for="password"
                             className="block text-sm font-semibold text-gray-800"
-                            
                         >
                             Password
                         </label>
@@ -75,6 +84,10 @@ const SignUpForm = ({signUp}) => {
                             Login
                         </button>
                     </div>
+
+                    <a onClick={toggler}>Already part of the family? Log In</a>
+                
+                
                 </form>
             </div>
         </div>
