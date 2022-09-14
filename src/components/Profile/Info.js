@@ -39,14 +39,14 @@ const toggler = () => {
       <button onClick={toggler} className='italic'>Feel free to add your info here! </button>
      </div>
 
-      <div className="relative flex flex-col justify-center min-h-screen overflow-hidden">
+      <div onLoad={!toggler} className="relative flex flex-col justify-center min-h-screen overflow-hidden">
     <div className="w-full p-6 m-auto bg-white rounded-md shadow-xl shadow-gray-600/40 ring-2 ring-gray-600 lg:max-w-xl">
 
         <h3 className="text-3xl font-semibold text-center text-gray-700 uppercase decoration-wavy">
             Add you profile info
         </h3>
 
-        <form className="mt-6" onSubmit={handleUpdate} >
+        <form className="mt-6" onSubmit={handleUpdate}>
 
             <div className="mb-2">
                 <label
