@@ -848,6 +848,10 @@ video {
   text-transform: uppercase;
 }
 
+.italic {
+  font-style: italic;
+}
+
 .tracking-wide {
   letter-spacing: 0.025em;
 }
