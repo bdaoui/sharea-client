@@ -23,36 +23,28 @@ const LoginForm = () => {
             navigate("/homepage");
     }
     
-
-
-
   return (
     <div>
- <Container>
-            <Row>
-                <Col md={5} className="login__bg"></Col>
-                <Col md={7} className="d-flex align-items-center justify-content-center flex-direction-column">
-                    <Form style={{ width: "80%", maxWidth: 500 }} onSubmit={handleLogin}>
-                        <Form.Group className="mb-3" controlId="formBasicEmail">
-                            <Form.Label>Username</Form.Label>
-                            <Form.Control type="username" placeholder="Enter username" onChange={(e) => setUsername(e.target.value)} value={username} required />
-                        </Form.Group>
+ <div>
+            <div>
+                <div md={5} className="login__bg"></div>
+                <div md={7} className="d-flex align-items-center justify-content-center flex-direction-column">
+                    <form style={{ width: "80%", maxWidth: 500 }} onSubmit={handleLogin}>
+                    
+                            <label>Username</label>
+                            <input type="username" placeholder="Enter username" onChange={(e) => setUsername(e.target.value)} value={username} required />
+                        
 
-                        <Form.Group className="mb-3" controlId="formBasicPassword">
-                            <Form.Label>Password</Form.Label>
-                            <Form.Control type="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)} value={password} required />
-                        </Form.Group>
-                        <Button variant="primary" type="submit">
-                        </Button>
-                        <div className="py-4">
-                            <p className="text-center">
-                                Need an account ? <Link to="/signup">Signup</Link>
-                            </p>
-                        </div>
-                    </Form>
-                </Col>
-            </Row>
-        </Container>
+                            <label>Password</label>
+                            <input type="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)} value={password} required />
+                       
+                        <button variant="primary" type="submit">
+                        </button>
+
+                    </form>
+                </div>
+            </div>
+        </div>
 
  {/* <button onClick={handleauth}>hello</button> */}
     </div>
