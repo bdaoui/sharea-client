@@ -17,13 +17,12 @@ const Upload = () =>  {
     uploadData.append("imageUrl", e.target.image.files[0]);
     uploadData.append("name", name);
     uploadData.append("tags", JSON.stringify(tagsArray));
-console.log(uploadData)
     service
       .uploadImage(uploadData)
       .then((response) => {
         console.log(response);
-        navigate("/homepage");
       })
+      .then(navigate('/homepage'))
       .catch((err) => console.log("Error while uploading the file: ", err));
   };
 
