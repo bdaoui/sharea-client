@@ -13,53 +13,20 @@ const NavBar = () => {
     }
 
   return (
-    <div className='navbar dark light'>
-<nav>
+    <div className='shadow-md w-full sticky top-0 left-0 p-2'>
+        <nav className='flex justify-between  bg-white py-4 ms:flex-column' >
+            <span><a href='/homepage'>ShArea</a></span>
+
+            <div className='flex flex-col md:flex-row justify-center gap-5'>
+                <NavLink to="/profile" className="Links dark" >Profile</NavLink>
+
+                <NavLink to="/" className="Links dark">Log In</NavLink>
+                <button onClick={doLogout}  className="Links dark btn-danger ">Log Out</button>
+            </div>
+        </nav>
 
 
-        <a to="/homepage" className="Links dark" >Homepage</a>
-        <a to="/profile" className="Links dark" >Profile</a>
-
-        <a to="/" className="Links dark">Log In</a>
-        <button onClick={doLogout}  className="Links dark btn-danger ">Log Out</button>
-</nav>
-{/* <Navbar bg="dark" expand="lg">
-            <Container>
-
-                        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                        <Navbar.Collapse id="basic-navbar-nav">
-                            <Nav className="ms-auto">
-                            
-                                    <LinkContainer to="/login">
-                                        <Nav.Link>Login</Nav.Link>
-                                    </LinkContainer>
-                            
-                                <LinkContainer to="/chat">
-                                    <Nav.Link>Chat</Nav.Link>
-                                </LinkContainer>
-                                <LinkContainer to="/feed">
-                                    <Nav.Link>Feed</Nav.Link>
-                                </LinkContainer>
-                            
-                                    <NavDropdown
-                                        
-                                        id="basic-nav-dropdown"
-                                    >
-                                        <NavDropdown.Item href="/profile">Profile</NavDropdown.Item>
-                                        <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-                                        <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-
-                                        <NavDropdown.Item>
-                                            <Button variant="danger" >
-                                                Logout
-                                            </Button>
-                                        </NavDropdown.Item>
-                                    </NavDropdown>
-                            
-                            </Nav>
-                        </Navbar.Collapse>
-                    </Container>
-                </Navbar>
+        
 
     </div>
   )
