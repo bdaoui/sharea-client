@@ -41,4 +41,12 @@ const handleLogout = () => {
     .catch(errorHandler)
 }
 
-export default { baseURL, service, image, uploadImage, createImage, handleLogout};
+const imageById = (id) =>{
+  return service 
+    .get(`/image/${id}`)
+    .then(res => res.data)
+    .catch(err => console.log(err))
+}
+
+
+export default { baseURL, service, image, uploadImage, createImage, handleLogout, imageById};
