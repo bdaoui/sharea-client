@@ -30,7 +30,7 @@ const Homepage = () => {
 
   return (
     <div className="flex flex-col">
-      <h1>Welcome to SHAREA, {user && user.currentUser.username}</h1>
+      <h1>Welcome to SHAREA, {user && user.username}</h1>
       <Search searchHandler={searchHandler} />
       <div className="flex flex-row"> 
       
