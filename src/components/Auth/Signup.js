@@ -46,7 +46,7 @@ console.log(toggle)
                         </label>
                         <input
                             type="username"
-                            className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border rounded-md focus:border-gray-400 focus:ring-gray-300 focus:outline-none focus:ring focus:ring-opacity-40"
+                            className="block w-full px-4 py-2 mt-2 mb-5 text-gray-700 bg-white border rounded-md focus:border-gray-400 focus:ring-gray-300 focus:outline-none focus:ring focus:ring-opacity-40"
                             placeholder='Enter your username'
                             onChange={(e) => setUsername(e.target.value)} value={username}
                             />
@@ -57,10 +57,11 @@ console.log(toggle)
                             Email
                         </label>
                         <input type="email"
-                            className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border rounded-md focus:border-gray-400 focus:ring-gray-300 focus:outline-none focus:ring focus:ring-opacity-40"
+                            className="block w-full px-4 py-2 mt-2 mb-2 text-gray-700 bg-white border rounded-md focus:border-gray-400 focus:ring-gray-300 focus:outline-none focus:ring focus:ring-opacity-40"
                             placeholder='Enter your email'
                             onChange={(e) => setEmail(e.target.value)} value={email}
                             />
+                        <p className='text-xs font-medium mb-5'>We'll never share your email with anyone else. </p>
                     </div>
 
                     <div className="mb-2">
@@ -72,7 +73,7 @@ console.log(toggle)
                         </label>
                         <input
                             type="password"
-                            className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border rounded-md focus:border-gray-400 focus:ring-gray-300 focus:outline-none focus:ring focus:ring-opacity-40"
+                            className="block w-full px-4 py-2 mt-2 mb-5 text-gray-700 bg-white border rounded-md focus:border-gray-400 focus:ring-gray-300 focus:outline-none focus:ring focus:ring-opacity-40"
                             placeholder='Enter your password'
                             onChange={(e) => setPassword(e.target.value)} value={password}
                             />
@@ -85,9 +86,9 @@ console.log(toggle)
                         </button>
                     </div>
 
-                    <a onClick={toggler}>Already part of the family? Log In</a>
+                    <button className='text-gray-500 pt-5' onClick={toggler}>Already part of the family? <button className='font-semibold'> Log in</button></button>
                 
-                
+
                 </form>
             </div>
         </div>

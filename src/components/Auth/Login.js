@@ -50,7 +50,7 @@ const LoginForm = () => {
                 </label>
                 <input
                     type="username"
-                    className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border rounded-md focus:border-gray-400 focus:ring-gray-300 focus:outline-none focus:ring focus:ring-opacity-40"
+                    className="block w-full px-4 py-2 mt-5 mb-5 text-gray-700 bg-white border rounded-md focus:border-gray-400 focus:ring-gray-300 focus:outline-none focus:ring focus:ring-opacity-40"
                     placeholder='Enter your username'
                     onChange={(e) => setUsername(e.target.value)} value={username}
                     />
@@ -64,7 +64,7 @@ const LoginForm = () => {
                 </label>
                 <input
                     type="password"
-                    className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border rounded-md focus:border-gray-400 focus:ring-gray-300 focus:outline-none focus:ring focus:ring-opacity-40"
+                    className="block w-full px-4 py-2 mt-5 mb-5 text-gray-700 bg-white border rounded-md focus:border-gray-400 focus:ring-gray-300 focus:outline-none focus:ring focus:ring-opacity-40"
                     placeholder='Enter your password'
                     onChange={(e) => setPassword(e.target.value)} value={password}
                     />
@@ -77,8 +77,8 @@ const LoginForm = () => {
                 </button>
             </div>
 
-            <a onClick={toggler}>Already part of the family? Log In</a>
-            
+            <button className='text-gray-500 pt-5' onClick={toggler}>Need an account? <button className='font-semibold'> Sign up</button></button>
+
         </form>
     </div>
 </div>

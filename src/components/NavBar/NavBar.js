@@ -17,7 +17,7 @@ const NavBar = () => {
     
     <div className="bg-gray-700 flex items-center justify-between border-b border-gray-400 py-4 px-5">
       
-      <a href="/" className='text-white font-black'>SHAREA</a>
+      <a href="/homepage" className='text-white font-black'>SHAREA</a>
       
       <nav>
 

@@ -9,10 +9,20 @@ const Homepage = () => {
 
 
   return (
-    <div style={{ display: "flex" }}>
-      <h1>Hello {user && user.username}</h1>
-      <Upload />
+    <div className="flex flex-col">
+      <h1>Welcome to SHAREA, {user && user.currentUser.username}</h1>
+      
+      <div className="flex flex-row"> 
+      
+    <aside class="h-screen sticky top-0">
+        <Upload />
+    </aside>
+   
+
+      
       <Feed />
+      </div>
+     
 
       </div>
   );
