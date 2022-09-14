@@ -1,7 +1,5 @@
 import React, {useState} from 'react'
 import { useNavigate, NavLink } from 'react-router-dom';
-import { Nav, Navbar, Container, Button, NavDropdown } from "react-bootstrap";
-import {LinkContainer} from "react-router-bootstrap"
 import "./NavBar.css"
 import service from '../../Context/AppContext';
 import axios from 'axios'
@@ -16,15 +14,17 @@ const NavBar = () => {
 
   return (
     <div className='navbar dark light'>
+<nav>
 
-        <NavLink to="/homepage" className="Links dark" >Homepage</NavLink>
-        <NavLink to="/profile" className="Links dark" >Profile</NavLink>
 
-        <NavLink to="/" className="Links dark">Log In</NavLink>
-        <Button onClick={doLogout}  className="Links dark btn-danger ">Log Out</Button>
+        <a to="/homepage" className="Links dark" >Homepage</a>
+        <a to="/profile" className="Links dark" >Profile</a>
 
-        <Navbar bg="dark" expand="lg">
-                    <Container>
+        <a to="/" className="Links dark">Log In</a>
+        <button onClick={doLogout}  className="Links dark btn-danger ">Log Out</button>
+</nav>
+{/* <Navbar bg="dark" expand="lg">
+            <Container>
 
                         <Navbar.Toggle aria-controls="basic-navbar-nav" />
                         <Navbar.Collapse id="basic-navbar-nav">
