@@ -86,7 +86,7 @@ console.log(toggle)
                         </button>
                     </div>
 
-                    <button className='text-gray-500 pt-5' onClick={toggler}>Already part of the family? <button className='font-semibold'> Log in</button></button>
+                    <a className='text-gray-500 pt-5' onClick={toggler}>Already part of the family? <button className='font-semibold'> Log in</button></a>
                 
 
                 </form>

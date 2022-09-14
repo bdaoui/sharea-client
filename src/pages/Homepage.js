@@ -21,7 +21,7 @@ const Homepage = () => {
     };
     searchResult();
   }, [search]);
-
+ 
   const searchHandler = (result) => {
     setSearch(result);
   };
@@ -34,12 +34,10 @@ const Homepage = () => {
       <Search searchHandler={searchHandler} />
       <div className="flex flex-row"> 
       
-    <aside class="h-screen sticky top-0">
+    <aside className="h-screen sticky top-0">
         <Upload />
     </aside>
    
-
-      
       <Feed />
       </div>
      

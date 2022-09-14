@@ -6,9 +6,7 @@ import Masonry from '@mui/lab/Masonry';
 
 const Feed = () => {
     const [allImages, setAllImages] = useState([]);
-    console.log(allImages)
-   
-
+  
     useEffect(() =>{
         service
             .image()
