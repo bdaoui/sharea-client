@@ -645,6 +645,14 @@ video {
   margin: 0.75rem;
 }
 
+.m-5 {
+  margin: 1.25rem;
+}
+
+.m-8 {
+  margin: 2rem;
+}
+
 .my-3 {
   margin-top: 0.75rem;
   margin-bottom: 0.75rem;
@@ -989,6 +997,10 @@ video {
 
 .gap-4 {
   gap: 1rem;
+}
+
+.gap-9 {
+  gap: 2.25rem;
 }
 
 .space-y-6 > :not([hidden]) ~ :not([hidden]) {
