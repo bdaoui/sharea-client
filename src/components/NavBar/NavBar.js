@@ -2,7 +2,6 @@ import React, {useState} from 'react'
 import { useNavigate, NavLink } from 'react-router-dom';
 import "./NavBar.css"
 import service from '../../Context/AppContext';
-import axios from 'axios'
 
 const NavBar = () => {
     const navigate = useNavigate();
@@ -17,10 +16,10 @@ const NavBar = () => {
 <nav>
 
 
-        <a to="/homepage" className="Links dark" >Homepage</a>
-        <a to="/profile" className="Links dark" >Profile</a>
+        <a href="/homepage" className="Links dark" >Homepage</a>
+        <a href="/profile" className="Links dark" >Profile</a>
 
-        <a to="/" className="Links dark">Log In</a>
+        <a href="/" className="Links dark">Log In</a>
         <button onClick={doLogout}  className="Links dark btn-danger ">Log Out</button>
 </nav>
 {/* <Navbar bg="dark" expand="lg">

@@ -1,6 +1,5 @@
 import React, {useEffect, useState, useContext} from 'react';
 import {useNavigate, Link} from "react-router-dom";
-import {Container, Row, Col, Form, Button} from 'react-bootstrap'
 import Axios from "axios";
 import {AuthContext} from '../../Context/Context';
 
@@ -24,31 +23,52 @@ const LoginForm = () => {
     }
     
   return (
-    <div>
- <div>
-            <div>
-                <div md={5} className="login__bg"></div>
-                <div md={7} className="d-flex align-items-center justify-content-center flex-direction-column">
-                    <form style={{ width: "80%", maxWidth: 500 }} onSubmit={handleLogin}>
-                    
-                            <label>Username</label>
-                            <input type="username" placeholder="Enter username" onChange={(e) => setUsername(e.target.value)} value={username} required />
-                        
+    <div className="relative flex flex-col justify-center min-h-screen overflow-hidden">
+    <div className="w-full p-6 m-auto bg-white rounded-md shadow-xl shadow-gray-600/40 ring-2 ring-gray-600 lg:max-w-xl">
+        
+        <h1 className="text-3xl font-semibold text-center text-gray-700 uppercase decoration-wavy">
+            Enter your ShArea
+        </h1>
 
-                            <label>Password</label>
-                            <input type="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)} value={password} required />
-                       
-                        <button variant="primary" type="submit">
-                        </button>
+        <form className="mt-6" onSubmit={handleLogin}>
 
-                    </form>
-                </div>
+            <div className="mb-2">
+                <label
+                    for="username"
+                    className="block text-sm font-semibold text-gray-800">
+                    Username
+                </label>
+                <input
+                    type="username"
+                    className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border rounded-md focus:border-gray-400 focus:ring-gray-300 focus:outline-none focus:ring focus:ring-opacity-40"
+                    placeholder='Enter your username'
+                    onChange={(e) => setUsername(e.target.value)} value={username}
+                    />
             </div>
-        </div>
+            
+            <div className="mb-2">
+                <label
+                    for="password"
+                    className="block text-sm font-semibold text-gray-800">
+                    Password
+                </label>
+                <input
+                    type="password"
+                    className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border rounded-md focus:border-gray-400 focus:ring-gray-300 focus:outline-none focus:ring focus:ring-opacity-40"
+                    placeholder='Enter your password'
+                    onChange={(e) => setPassword(e.target.value)} value={password}
+                    />
+            </div>
 
- {/* <button onClick={handleauth}>hello</button> */}
+            <div className="mt-6">
+                <button className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600"
+                type="submit">
+                    Login
+                </button>
+            </div>
+        </form>
     </div>
-
+</div>
   )
 }
 

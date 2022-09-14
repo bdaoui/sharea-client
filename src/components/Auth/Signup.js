@@ -1,6 +1,7 @@
 import React, {useRef, useState} from 'react';
 import {useNavigate , Link} from "react-router-dom";
 import Axios from "axios";
+import { LockClosedIcon } from '@heroicons/react/solid'
 
 const SignUpForm = ({signUp}) => {
     const navigate = useNavigate();
@@ -18,34 +19,65 @@ const SignUpForm = ({signUp}) => {
     }
 
   return (
-    <div>
-    <div>
-        <div md={12} className="d-flex align-items-center justify-content-center flex-direction-divumn pt-5">
-            <form style={{ width: "100%", maxWidth: 500 }} onSubmit={handleSubmit}>
-
-                <h1 className="text-center">Create an account!!!</h1>
-
-               
-                    <label>Name</label>
-                    <input type="text" placeholder="Your name" onChange={(e) => setUsername(e.target.value)} value={username}/>
-             
+    <div className="relative flex flex-col justify-center min-h-screen overflow-hidden">
+            <div className="w-full p-6 m-auto bg-white rounded-md shadow-xl shadow-gray-600/40 ring-2 ring-gray-600 lg:max-w-xl">
                 
-                    <label>Email address</label>
-                    <input type="email" placeholder="Enter email" onChange={(e) => setEmail(e.target.value)} value={email} />
-                    <p className="text-muted">We'll never share your email with anyone else.</p>
-            
+                <h1 className="text-3xl font-semibold text-center text-gray-700 uppercase decoration-wavy">
+                    Create an account
+                </h1>
 
-                    <label>Password</label>
-                    <input type="password" placeholder="Password"  onChange={(e) => setPassword(e.target.value)} value={password} />
-                
-                <button variant="primary" type="submit" className="btn-primary">
-             
-                </button>
-           
-            </form>
+                <form className="mt-6" onSubmit={handleSubmit}>
+
+                    <div className="mb-2">
+                        <label
+                            for="username"
+                            className="block text-sm font-semibold text-gray-800">
+                            Username
+                        </label>
+                        <input
+                            type="username"
+                            className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border rounded-md focus:border-gray-400 focus:ring-gray-300 focus:outline-none focus:ring focus:ring-opacity-40"
+                            placeholder='Enter your username'
+                            onChange={(e) => setUsername(e.target.value)} value={username}
+                            />
+                    </div>
+                    
+                    <div className="mb-2">
+                        <label for="email" className="block text-sm font-semibold text-gray-800">
+                            Email
+                        </label>
+                        <input type="email"
+                            className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border rounded-md focus:border-gray-400 focus:ring-gray-300 focus:outline-none focus:ring focus:ring-opacity-40"
+                            placeholder='Enter your email'
+                            onChange={(e) => setEmail(e.target.value)} value={email}
+                            />
+                    </div>
+
+                    <div className="mb-2">
+                        <label
+                            for="password"
+                            className="block text-sm font-semibold text-gray-800"
+                            
+                        >
+                            Password
+                        </label>
+                        <input
+                            type="password"
+                            className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border rounded-md focus:border-gray-400 focus:ring-gray-300 focus:outline-none focus:ring focus:ring-opacity-40"
+                            placeholder='Enter your password'
+                            onChange={(e) => setPassword(e.target.value)} value={password}
+                            />
+                    </div>
+
+                    <div className="mt-6">
+                        <button className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600"
+                        type="submit">
+                            Login
+                        </button>
+                    </div>
+                </form>
+            </div>
         </div>
-    </div>
-</div>
 );
 
 }
