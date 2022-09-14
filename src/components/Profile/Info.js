@@ -7,7 +7,7 @@ const {user, setUser} = useContext(AuthContext)
 
   return (
     <div>
-      <h3>Hello {user.currentUser.username} </h3>
+      <h3>Hello {user.username} </h3>
       <span>Welcome to your profile page</span>
 
 
