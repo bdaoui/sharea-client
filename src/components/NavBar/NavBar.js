@@ -1,6 +1,5 @@
 import React, {useState} from 'react'
 import { useNavigate, NavLink } from 'react-router-dom';
-import { Nav, Navbar, Container, Button, NavDropdown, LinkContainer } from "react-bootstrap";
 import "./NavBar.css"
 import service from '../../Context/AppContext';
 import axios from 'axios'
@@ -15,13 +14,15 @@ const NavBar = () => {
 
   return (
     <div className='navbar dark light'>
+<nav>
 
-        <NavLink to="/homepage" className="Links dark" >Homepage</NavLink>
-        <NavLink to="/profile" className="Links dark" >Profile</NavLink>
 
-        <NavLink to="/" className="Links dark">Log In</NavLink>
-        <Button onClick={doLogout}  className="Links dark btn-danger ">Log Out</Button>
+        <a to="/homepage" className="Links dark" >Homepage</a>
+        <a to="/profile" className="Links dark" >Profile</a>
 
+        <a to="/" className="Links dark">Log In</a>
+        <button onClick={doLogout}  className="Links dark btn-danger ">Log Out</button>
+</nav>
 {/* <Navbar bg="dark" expand="lg">
             <Container>
 
