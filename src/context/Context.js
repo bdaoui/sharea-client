@@ -16,7 +16,7 @@ function Context(props) {
       console.log("not working")
     }
   }
-
+  
   useEffect(() => { 
     authenticateUser();
   },[]);
