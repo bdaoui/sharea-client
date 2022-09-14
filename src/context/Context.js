@@ -2,7 +2,10 @@ import { createContext, useState, useEffect } from "react";
 
 const AuthContext = createContext()
 function Context(props) {
+
   const [user, setUser] = useState(null);
+  const [toggle, setToggle] = useState(false)
+
   const authenticateUser = async () =>{
     const token = await JSON.parse(localStorage.getItem("token"));  
     console.log("this is token ", token)
@@ -13,14 +16,13 @@ function Context(props) {
       console.log("not working")
     }
   }
-
+  
   useEffect(() => { 
     authenticateUser();
   },[]);
-  console.log("this is working? ",  user)
 
   return (
-    <AuthContext.Provider value={{user, setUser}}>
+    <AuthContext.Provider value={{user, setUser, toggle, setToggle}}>
       {props.children}
     </AuthContext.Provider>
   )

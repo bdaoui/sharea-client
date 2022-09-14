@@ -3,9 +3,18 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+<<<<<<< HEAD
     "@heroicons/vue": "^2.0.11",
     "@mui/lab": "^5.0.0-alpha.99",
     "@mui/material": "^5.10.5",
+=======
+    "@emotion/react": "^11.10.4",
+    "@emotion/styled": "^11.10.4",
+    "@heroicons/react": "^2.0.11",
+    "@mui/lab": "^5.0.0-alpha.99",
+    "@mui/material": "^5.10.5",
+    "@mui/styled-engine": "^5.10.5",
+>>>>>>> 5f22c298ce50a7459aae26eac18e4fe142437a8e
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",

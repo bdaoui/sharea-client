@@ -28,7 +28,6 @@ const uploadImage = (file) => {
 
 const createImage = (newImage) => {
   // console.log("new image in service: ", newImage)
-  
   return service
     .post("/image", newImage)
     .then((res) => res.data)
