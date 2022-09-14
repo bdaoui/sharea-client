@@ -4,6 +4,7 @@ import OutletComponent from "./Components/NavBar/OutletComponent";
 import Homepage from './Pages/Homepage';
 import Auth from './Pages/Auth';
 import Profile from './Pages/Profile';
+import Error from './Pages/Error';
 import {AuthContext} from './Context/Context'
 import {useContext} from 'react';
 
@@ -21,6 +22,7 @@ function App() {
       <Route path={"/homepage" }  element={<Homepage /> } /> 
       <Route path={"/profile" }  element={<Profile /> } />
       <Route path={"/" }  element={<Auth /> } />
+      <Route path={'*'} element={<Error />} />
       </Route>
     </Routes>
     }
@@ -31,10 +33,10 @@ function App() {
     <Route path={"/homepage" }  element={<Auth /> } /> 
     <Route path={"/profile" }  element={<Auth /> } /> 
     <Route path={"/" }  element={<Auth /> } />
+    <Route path={'*'} element={<Error />} />
     </Route>
   </Routes>
   }
-
   </div>
   );
 }
