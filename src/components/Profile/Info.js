@@ -1,4 +1,4 @@
-import React, {useContext, useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import { useNavigate } from 'react-router-dom';
 import {AuthContext} from '../../Context/Context';
 import Axios from 'axios';
@@ -13,6 +13,16 @@ const [info, setInfo] = useState('')
 const id = user._id;
 
 
+const toggler = () => {
+    if(toggle === false){
+        setToggle(true)
+    } else {
+        setToggle(false)
+    }
+} 
+
+
+
 const handleUpdate = (e) =>{
   console.log(location ,occupation, info, id)
   e.preventDefault();
@@ -23,24 +33,28 @@ const handleUpdate = (e) =>{
       toggler();
 }
 
-const toggler = () => {
-  if(toggle === false){
-      setToggle(true)
-  } else {
-      setToggle(false)
-  }
-} 
+
+
 
   return (
     <>
+    
+   {!toggle &&
     <div>
       <h3>Hello <span className='font-bold'>{user.username}</span> </h3>
       <span>Welcome to your profile page</span><br></br>
       <button onClick={toggler} className='italic'>Feel free to add your info here! </button>
      </div>
-
+    } 
+    
+    {toggle  &&
+   
       <div className="relative flex flex-col justify-center min-h-screen overflow-hidden">
     <div className="w-full p-6 m-auto bg-white rounded-md shadow-xl shadow-gray-600/40 ring-2 ring-gray-600 lg:max-w-xl">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6" onClick={toggler}>
+        <path stroke-linecap="round" stroke-linejoin="round" d="M9 15L3 9m0 0l6-6M3 9h12a6 6 0 010 12h-3" />
+    </svg>
 
         <h3 className="text-3xl font-semibold text-center text-gray-700 uppercase decoration-wavy">
             Add you profile info
@@ -99,7 +113,7 @@ const toggler = () => {
         </form>
     </div>
 </div>
-    
+    }
     
     
    

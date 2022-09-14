@@ -1,25 +1,69 @@
-import React, {useContext} from 'react'
+import React, {useContext, useEffect, useState} from 'react'
 import Info from '../Components/Profile/Info'
 import InfoCard from '../Components/Profile/InfoCard'
 import RandomImages from '../Components/Profile/RandomImages'
 import Images from '../Components/Profile/Images'
 import {AuthContext} from '../Context/Context';
 
+
 const Profile = () => {
-  const {toggle, setToggle} = useContext(AuthContext);
+  const {toggle, setToggle} = useContext(AuthContext)
+  const [page, setPage] = useState("Images");
+  
+ 
+  // Show Buttons for Feed and Feed
+
+  const visibility = () =>{
+
+    let element = document.getElementById("hidden");
+    const style = getComputedStyle(element).display;
+  
+    if(style === "none"){
+      document.getElementById("hidden").style.display = "unset";
+    }
+    else{
+      document.getElementById("hidden").style.display = "none"; 
+  
+    }
+  
+  }
+
+
+  if(toggle === true){
+    visibility();
+  }
+  
+
 
   return (
     <div>
-      <Info /> 
       
-      {toggle && <Images />
-      }
-      {!toggle && <RandomImages />
-      }
+    <Info />
 
+     <section id='hidden' className='flex justify-center gap-9 m-5 hidden'>
+
+     <div>
+        <button className="w-50 px-4 py-2  m-8 tracking-wide text-white transition-colors duration-200 transform bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600" onClick={()=>setPage("RandomImages")}>Random Images</button>
+
+        <button  className="w-50 px-4 m-8 py-2 tracking-wide text-white transition-colors duration-200 transform bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600" onClick={() =>setPage('Images')}>My Images</button>
+
+      </div>
+
+   
+    
+  
+    
+    {page === "Images" && <Images /> }
+    {page === "RandomImages" && <RandomImages /> }      
+    
+    </section> 
 
     </div>
+
+    
   )
+
+
 }
 
 export default Profile
