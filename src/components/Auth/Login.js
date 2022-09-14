@@ -70,8 +70,6 @@ const LoginForm = () => {
                     />
             </div>
 
-<<<<<<< HEAD
-=======
             <div className="mt-6">
                 <button className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600"
                 type="submit">
@@ -82,7 +80,6 @@ const LoginForm = () => {
             <a className='text-gray-500 pt-5' onClick={toggler}>Need an account? <button className='font-semibold'> Sign up</button></a>
 
         </form>
->>>>>>> 5f22c298ce50a7459aae26eac18e4fe142437a8e
     </div>
 </div>
   )
