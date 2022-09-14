@@ -21,8 +21,6 @@ const toggler = () => {
     }
 } 
 
-
-
 const handleUpdate = (e) =>{
   console.log(location ,occupation, info, id)
   e.preventDefault();
