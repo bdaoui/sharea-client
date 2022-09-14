@@ -1,9 +1,12 @@
-import React, {useState} from "react";
+import React, {useState, useContext} from "react";
 import { useNavigate } from "react-router-dom";
 import service from "../../Context/AppContext";
+import {AuthContext} from '../../Context/Context';
 
 
 const Upload = () =>  {
+  const {user, setUser} = useContext(AuthContext)
+
   const [name, setName] = useState("");
   const [tags, setTags] = useState([]);
 
@@ -16,6 +19,7 @@ const Upload = () =>  {
     const uploadData = new FormData();
     uploadData.append("imageUrl", e.target.image.files[0]);
     uploadData.append("name", name);
+    uploadData.append("owner", user._id );
     uploadData.append("tags", JSON.stringify(tagsArray));
     service
       .uploadImage(uploadData)

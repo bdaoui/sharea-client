@@ -1,9 +1,24 @@
-import React from 'react'
+import React, {useState, useContext, useEffect} from 'react';
+import service from "../../Context/AppContext";
+import {AuthContext} from '../../Context/Context';
 
 const Images = () => {
+  const {user, setUser} = useContext(AuthContext);
+  const [allImages, setAllImages] = useState([]);
+
+  useEffect(() =>{
+    service
+    .imageById(user._id)
+    .then(allImages =>{
+      setAllImages(allImages);
+      console.log("this are all my images ", allImages);
+
+    })
+    .catch(err => console.log(err));
+
+},[] ) 
 
 
- 
   return (
     <div className='flex flex-col'> 
     
