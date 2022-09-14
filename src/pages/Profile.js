@@ -10,9 +10,8 @@ const Profile = () => {
 
   return (
     <div>
-      {toggle && <Info /> 
-      }
-      {!toggle && <InfoCard /> }
+      <Info /> 
+      
       {toggle && <Images />
       }
       {!toggle && <RandomImages />
