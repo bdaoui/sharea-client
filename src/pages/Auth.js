@@ -11,7 +11,7 @@ function Auth() {
 
   return (
     <>
-    <div>
+    <div className='bg-gray-50 bg-cover bg-center'>
     {toggle && <Login/>}
     {!toggle && <Signup/>}
     </div>

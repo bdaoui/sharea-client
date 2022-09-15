@@ -1,23 +1,29 @@
-import React, {useState} from 'react'
+import React, {useState, useContext} from 'react'
 import { useNavigate } from 'react-router-dom';
 import "./NavBar.css"
 import service from '../../Context/AppContext';
+import {AuthContext} from '../../Context/Context';
 
 const NavBar = () => {
+    const {user, setUser} = useContext(AuthContext);
+    const authUser = user;
+    console.log(authUser)
+
     const [isNavOpen, setIsNavOpen] = useState(false);
     const navigate = useNavigate();
 
     function doLogout () {
         service
             .handleLogout()
-            .then(navigate('/'))
+            .then(setTimeout(function(){ window.location.reload()}))
+            .catch((err) => console.log(err));
     }
 
   return(
     
-    <div className="bg-gray-700 flex items-center justify-between border-b border-gray-400 py-4 px-5">
+    <div className="bg-sky-400 flex items-center justify-between py-4 px-5">
       
-      <a href="/homepage" className='text-white font-black'>SHAREA</a>
+      <a href="/homepage" className='text-white font-black font-amita text-3xl'>SHH-AREA</a>
       
       <nav>
 
@@ -45,30 +51,65 @@ const NavBar = () => {
               </svg>
             </div>
 
-            <ul className="MENU-LINK-MOBILE-OPEN flex flex-col items-center justify-between min-h-[250px]">
-              <li className="border-b border-gray-400 my-8 uppercase">
-                <a href="/profile">Profile</a>
+            <ul className="MENU-LINK-MOBILE-OPEN font-black font-amita text-xl flex flex-col items-center justify-between min-h-[250px]">
+              
+            {authUser && 
+              
+              <li className="border-b border-gray-400 my-8">
+                <a href="/profile">PROFILE</a>
               </li>
-              <li className="border-b border-gray-400 my-8 uppercase">
-                <a href="/">Login</a>
+
+            }
+
+            {!authUser &&
+
+              <li className="border-b border-gray-400 my-8">
+                <a href="/">LOGIN</a>
               </li>
-              <li className="border-b border-gray-400 my-8 uppercase">
+            }
+              {authUser &&
+
+              <li className="border-b border-gray-400 my-8">
                 <button onClick={doLogout}>LOGOUT</button>
               </li>
+            
+
+              }
+
+            
             </ul>
           </div>
         </section>
 
-        <ul className="DESKTOP-MENU text-white hidden space-x-8 lg:flex">
+        <ul className="DESKTOP-MENU font-black font-amita text-lg text-white hidden space-x-8 lg:flex font-amita">
+         
+         {authUser &&
+
           <li>
-            <a href="/profile">Profile</a>
+            <a href="/profile">PROFILE</a>
           </li>
+         
+         
+
+         }
+          
+          {!authUser &&
           <li>
-            <a href="/">Login</a>
+            <a href="/">LOGIN</a>
           </li>
+          
+          }
+          
+          {authUser &&
+
           <li>
-            <button onClick={doLogout}>Logout</button>
+            <button onClick={doLogout}>LOGOUT</button>
           </li>
+
+          }
+
+
+
         </ul>
       </nav>
       <style>{`
@@ -93,23 +134,4 @@ const NavBar = () => {
     </div>
   );
 }
-export default NavBar;   
-
-// <div>
-    //     <header className='flex bg-gray-700 justify-between text-white py-4 px-8'>
-
-    //         <a href="/homepage" className='text-lg font-bold'>SHAREA</a>
-
-    //         <ul className='hidden md:flex flex-row items-center align-middle gap-4'>
-    //             <li><a href="/profile">Profile</a></li>
-    //             <li><a href="/">Login</a></li>
-    //             <li><a href="/logout">Logout</a></li>
-    //         </ul>
-
-    //         <button x-data="{ open: false }" onClick={"open = !open"} className='md:hidden'>
-    //             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-    //                 <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-    //             </svg>
-    //         </button>
-    //     </header>
-    // </div>
+export default NavBar;  
