@@ -29,7 +29,7 @@ const handleUpdate = (e) =>{
       .post("http://localhost:3001/api/profile", { location, occupation, info, id })
       .then(response => console.log(response.data))
       .catch(err => console.log(err));
-      toggler();
+      setTimeout(function(){ window.location.reload(); }, 1000)
 }
 
 

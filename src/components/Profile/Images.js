@@ -9,8 +9,6 @@ const Images = () => {
   const [allImages, setAllImages] = useState([]);
   const id = user._id;
 
-  console.log(allImages)
-
   useEffect(() =>{
     service
       .imagesByOwner(id)

@@ -20,7 +20,6 @@ const LoginForm = () => {
                 setUser(response.data)
             })
             .catch(err => console.log(err));
-            console.log('user on login.js', user);
             navigate("/homepage");
     }
 

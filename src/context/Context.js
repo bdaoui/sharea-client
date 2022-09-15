@@ -12,7 +12,6 @@ function Context(props) {
 
   const authenticateUser = async () =>{
     const token = await JSON.parse(localStorage.getItem("token"));  
-    console.log("this is token ", token)
     if(token){
       await setUser(token)
     }
