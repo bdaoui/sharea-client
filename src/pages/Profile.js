@@ -9,24 +9,7 @@ import ProfileInfo from '../Components/Profile/ProfileInfo';
 const Profile = () => {
   const {toggle, setToggle} = useContext(AuthContext)
   const [page, setPage] = useState("Images");
-  
- 
-  // Show Buttons for Feed and Feed
-  // const visibility = () =>{
-  //   let element = document.getElementById("hidden");
-  //   const style = getComputedStyle(element).display;
-  //   if(style === "none"){
-  //     document.getElementById("hidden").style.display = "unset";
-  //   }
-  //   else{
-  //     document.getElementById("hidden").style.display = "none"; 
-  //   }
-  // }
 
-  // if(toggle === true){
-  //   visibility();
-  // }
-  
 
 
   return (

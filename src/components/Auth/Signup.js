@@ -13,7 +13,7 @@ const SignUpForm = () => {
 
     const handleSubmit = (e) =>{
         e.preventDefault();
-        Axios.post("http://localhost:3001/api/signup", {email, password, username})
+        Axios.post("https://smoggy-yak-top-hat.cyclic.app/api/signup", {email, password, username})
             .then(response => console.log(response))
             .catch(err => console.log(err));
             navigate("/");

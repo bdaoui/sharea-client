@@ -14,7 +14,7 @@ const LoginForm = () => {
     const handleLogin = (e) =>{
         e.preventDefault();
         Axios
-            .post("http://localhost:3001/api/signin", { username, password })
+            .post("https://smoggy-yak-top-hat.cyclic.app/api/signin", { username, password })
             .then(response => {
                 localStorage.setItem("token", JSON.stringify(response.data))
                 setUser(response.data)
