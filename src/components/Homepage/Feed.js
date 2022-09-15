@@ -33,7 +33,6 @@ useEffect (() => {
       let uniqueChars = doubles.filter((element, index) => {
         return doubles.indexOf(element) === index;
     });
-//console.log(uniqueChars)
     setSearching((uniqueChars))
 } ,[character])
 

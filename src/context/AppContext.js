@@ -62,5 +62,17 @@ const commentById = (id, comment, owner) =>{
     .catch(err => console.log(err))
 }
 
+const deleteById = (id) =>{
+  return service 
+    .post(`/image/${id}/delete`)
+    .then(res => res.data)
+    .catch(err => console.log(err))
+}
 
-export default { baseURL, service, image, uploadImage, createImage, handleLogout, imagesByOwner, imageById, commentById};
+const deleteCommentById = (id) =>{
+  return service 
+    .post(`/comment/${id}/delete`)
+    .then(res => res.data)
+    .catch(err => console.log(err))
+}
+export default { baseURL, service, image, uploadImage, createImage, handleLogout, imagesByOwner, imageById, commentById, deleteById, deleteCommentById};

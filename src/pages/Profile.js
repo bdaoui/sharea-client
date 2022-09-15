@@ -3,6 +3,7 @@ import Info from '../Components/Profile/Info'
 import RandomImages from '../Components/Profile/RandomImages'
 import Images from '../Components/Profile/Images'
 import {AuthContext} from '../Context/Context';
+import ProfileInfo from '../Components/Profile/ProfileInfo';
 
 
 const Profile = () => {
@@ -42,12 +43,14 @@ const Profile = () => {
     <div>
     {page === "Images" && <>
     <Info /> 
+    <ProfileInfo />
     <Images />
     </>}
     
     {page === "RandomImages" && 
     <>
     <Info />
+    <ProfileInfo />
     <RandomImages /> 
     </>}    
     </div>

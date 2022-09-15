@@ -26,8 +26,9 @@ const Upload = () =>  {
       .then((response) => {
         console.log(response);
       })
-      .then(navigate('/homepage'))
+      .then(setTimeout(function(){ window.location.reload(); }, 3000))
       .catch((err) => console.log("Error while uploading the file: ", err));
+      
   };
 
   return (
