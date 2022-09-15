@@ -1,35 +1,30 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import Box from '@mui/material/Box';
 import Masonry from '@mui/lab/Masonry';
 
 const RandomImages = () => {
-  
-// async function fetchApi() {
-//   let response = await fetch('https://picsum.photos/v2/list');
-//   let data = await response.text();
-//   data.forEach()
-//   console.log(data);
-// }
-// fetchApi();
-const arrayLength = 100;
-const randomArray = [];
-for(let i = 0; i < arrayLength; i++) {randomArray.push(Math.floor(Math.random() * 1000))}
-let output = '';
-const handleImageId = function(imageId){
-output += `<img src="https://picsum.photos/id/${imageId}/300/300" alt="Lorem Picsum Image">`
+const [pics, setPics] = useState([])
+const random = Math.floor(Math.random() * 30)
+
+async function fetchApi() {
+  let response = await fetch(`https://picsum.photos/v2/list?page=${random}&limit=100%27`);
+  let data = await response.json();
+  setPics(data);
+  console.log(data, 'hello')
 }
-randomArray.forEach(handleImageId);
-console.log(output)
+useEffect(() =>{
+  fetchApi();
+},[] ) 
 
   return (
     <div> 
       
-      {/* <Box> 
+      <Box> 
       <Masonry columns={{sm:1, md:2, lg:3}} spacing={1}>
-        {allImages.map((item, index) => (
-          <div key={item._id}>
+        {pics.map((item, index) => (
+          <div key={item.id}>
             <img
-              src={item.imageUrl}
+              src={item.download_url}
               alt={item.name}
               loading="lazy"
               style={{
@@ -38,12 +33,13 @@ console.log(output)
               }}
               className="transition-shadow ease-in-out duration-300 shadow-none hover:shadow-xl"
             />
-            <p>{item.name}</p>
-            <span>{item.tags}</span>
+            <p>{item.author}</p>
+            <span className='italic'>Like this image? Click below</span><br></br>
+            <a href={item.url} target="_blank">{item.url}</a>
           </div>
         ))}
       </Masonry>
-    </Box> */}
+    </Box>
 
 
     </div>

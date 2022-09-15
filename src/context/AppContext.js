@@ -41,6 +41,13 @@ const handleLogout = () => {
     .catch(errorHandler)
 }
 
+const imagesByOwner = (id) =>{
+  return service 
+    .get(`/image/${id}/owner`)
+    .then(res => res.data)
+    .catch(err => console.log(err))
+}
+
 const imageById = (id) =>{
   return service 
     .get(`/image/${id}`)
@@ -48,5 +55,12 @@ const imageById = (id) =>{
     .catch(err => console.log(err))
 }
 
+const commentById = (id, comment, owner) =>{
+  return service 
+    .post(`/image/${id}/comment`, {comment, owner})
+    .then(res => res.data)
+    .catch(err => console.log(err))
+}
 
-export default { baseURL, service, image, uploadImage, createImage, handleLogout, imageById};
+
+export default { baseURL, service, image, uploadImage, createImage, handleLogout, imagesByOwner, imageById, commentById};

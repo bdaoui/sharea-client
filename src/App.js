@@ -7,11 +7,11 @@ import Profile from './Pages/Profile';
 import Error from './Pages/Error';
 import {AuthContext} from './Context/Context'
 import {useContext} from 'react';
+import ImageId from './Pages/ImageId';
 
 function App() {
   //middleware and protect
-  const {user, setUser} = useContext(AuthContext)
-  console.log(user)
+  const {user, setUser} = useContext(AuthContext);
   const authUser = user;
 
   return (
@@ -21,6 +21,7 @@ function App() {
       <Route element={<OutletComponent /> } >
       <Route path={"/homepage" }  element={<Homepage /> } /> 
       <Route path={"/profile" }  element={<Profile /> } />
+      <Route path={"/image/:id" }  element={<ImageId /> } />
       <Route path={"/" }  element={<Auth /> } />
       <Route path={'*'} element={<Error />} />
       </Route>
@@ -31,7 +32,8 @@ function App() {
   <Routes>
     <Route element={<OutletComponent /> } >
     <Route path={"/homepage" }  element={<Auth /> } /> 
-    <Route path={"/profile" }  element={<Auth /> } /> 
+    <Route path={"/profile" }  element={<Auth /> } />
+    <Route path={"/image/:id" }  element={<Auth /> } />
     <Route path={"/" }  element={<Auth /> } />
     <Route path={'*'} element={<Error />} />
     </Route>
