@@ -5,6 +5,7 @@ function Context(props) {
 
   const [user, setUser] = useState(null);
   const [toggle, setToggle] = useState(false)
+  const [images, setImages] = useState([])
 
   const authenticateUser = async () =>{
     const token = await JSON.parse(localStorage.getItem("token"));  
@@ -22,7 +23,7 @@ function Context(props) {
   },[]);
 
   return (
-    <AuthContext.Provider value={{user, setUser, toggle, setToggle}}>
+    <AuthContext.Provider value={{user, setUser, toggle, setToggle, images, setImages}}>
       {props.children}
     </AuthContext.Provider>
   )

@@ -3,42 +3,41 @@ import Feed from "../Components/Homepage/Feed";
 import { AuthContext } from "../Context/Context";
 import Upload from '../Components/Homepage/Upload';
 import Search from "../Components/Homepage/Search";
-import axios from 'axios';
+import service from "../Context/AppContext";
+
 
 const Homepage = () => {
   const { user, setUser } = useContext(AuthContext);
+  const {images, setImages} = useContext(AuthContext);
   const [search, setSearch] = useState("");
-  const [image, setImage] = useState("")
+  const [character, setCharacter] = useState("");
+  const [allImages, setAllImages] = useState([]);
 
-  useEffect(() => {
-    const searchResult = async () => {
-      try {
-        const response = await axios.get('http://localhost:3001/api/image' + `/search?q=${search}`);
-        setImage(response.data);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-    searchResult();
-  }, [search]);
- 
-  const searchHandler = (result) => {
-    setSearch(result);
-  };
- 
+
+useEffect(() =>{
+    service
+        .image()
+        .then(allImages =>{
+          setAllImages(allImages);
+          setImages(allImages);
+        })
+        .catch(err => console.log(err));
+    
+}, [])
+
 
 
   return (
     <div className="flex flex-col">
       <h1>Welcome to SHAREA, {user && user.username}</h1>
-      <Search searchHandler={searchHandler} />
+      <Search character={character} setCharacter={setCharacter} />
       <div className="flex flex-row"> 
       
     <aside className="h-screen sticky top-0">
         <Upload />
     </aside>
    
-      <Feed />
+      <Feed allImages={allImages} setAllImages={setAllImages} character={character} />
       </div>
      
 

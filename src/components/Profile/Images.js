@@ -11,14 +11,14 @@ const Images = () => {
 
   useEffect(() =>{
     service
-      .imageById(id)
+      .imagesByOwner(id)
       .then(allImages =>{setAllImages(allImages)})
       .catch(err => console.log(err));
 },[] ) 
 
 
   return (
-    <div className='mt-10'>
+    <div>
       <h1>Your images</h1>
     <Box> 
       <Masonry columns={{sm:1, md:2, lg:3}} spacing={1}>
@@ -34,7 +34,7 @@ const Images = () => {
               }}
               className="transition-shadow ease-in-out duration-300 shadow-none hover:shadow-xl"
             />
-            <p>{item.name}</p>
+            <a href={`/image/${item._id}`}>{item.name}</a>
             <span>{item.tags}</span>
           </div>
         ))}
