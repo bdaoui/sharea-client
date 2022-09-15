@@ -1,9 +1,11 @@
-import React, {useState} from 'react'
+import React, {useState, useContext} from 'react'
 import { useNavigate } from 'react-router-dom';
 import "./NavBar.css"
 import service from '../../Context/AppContext';
+import {AuthContext} from '../../Context/Context';
 
 const NavBar = () => {
+    const {user, setUser} = useContext(AuthContext);
     const [isNavOpen, setIsNavOpen] = useState(false);
     const navigate = useNavigate();
 
@@ -52,9 +54,12 @@ const NavBar = () => {
               <li className="border-b border-gray-400 my-8 uppercase">
                 <a href="/">Login</a>
               </li>
+
               <li className="border-b border-gray-400 my-8 uppercase">
                 <button onClick={doLogout}>LOGOUT</button>
               </li>
+            
+            
             </ul>
           </div>
         </section>
@@ -95,21 +100,3 @@ const NavBar = () => {
 }
 export default NavBar;   
 
-// <div>
-    //     <header className='flex bg-gray-700 justify-between text-white py-4 px-8'>
-
-    //         <a href="/homepage" className='text-lg font-bold'>SHAREA</a>
-
-    //         <ul className='hidden md:flex flex-row items-center align-middle gap-4'>
-    //             <li><a href="/profile">Profile</a></li>
-    //             <li><a href="/">Login</a></li>
-    //             <li><a href="/logout">Logout</a></li>
-    //         </ul>
-
-    //         <button x-data="{ open: false }" onClick={"open = !open"} className='md:hidden'>
-    //             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-    //                 <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-    //             </svg>
-    //         </button>
-    //     </header>
-    // </div>
