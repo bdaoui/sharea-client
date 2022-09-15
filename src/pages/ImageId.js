@@ -4,7 +4,7 @@ import service from '../Context/AppContext';
 import {AuthContext} from '../Context/Context';
 
 const ImageId = () => {
-const [image, setImage] = useState([]);
+const [image, setImage] = useState({});
 const {id} = useParams();
 const [comment, setComment] = useState('');
 const {user, setUser} = useContext(AuthContext);
@@ -44,14 +44,8 @@ const handleSubmit = (e) => {
      <img src={image.imageUrl} alt={image.name} />
       <h3>{image.name}</h3>
       <h5>{image.tags}</h5>
-    </>
-    }
-
-
-{image && 
-<>
-       <h6>Image posted by: {image.owner.username}</h6> 
-      {image.comments.map(comment => <h6 key={comment._id}>{comment.comment}</h6> )}  
+      <h6>Image posted by: {image?.owner?.username}</h6> 
+      {image?.comments?.map(comment => <h6 key={comment?._id}>{comment?.comment}</h6> )}  
 </>    
 }
    
