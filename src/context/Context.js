@@ -7,9 +7,11 @@ function Context(props) {
   const [toggle, setToggle] = useState(false)
   const [images, setImages] = useState([])
 
+
+
+
   const authenticateUser = async () =>{
     const token = await JSON.parse(localStorage.getItem("token"));  
-    console.log("this is token ", token)
     if(token){
       await setUser(token)
     }

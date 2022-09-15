@@ -6,21 +6,6 @@ function Search({character, setCharacter}) {
   const {images, setImages} = useContext(AuthContext);
   const [filter, setFilter] = useState([])
 
-  // const handleSearch = (e) => {
-  //   setCharacter(e.target.value);
-  
-  // };
-  
-  // console.log(images)
-  // useEffect(() => {
-  //   const search = images.map(image => {
-  //     image.filter(e =>
-  //       console.log(e.tags))  
-      
-  //   })
-  //   setFilter(images)
-  // }, [character]);
-
   return (
     <>
       <label>Search SHAREA</label>

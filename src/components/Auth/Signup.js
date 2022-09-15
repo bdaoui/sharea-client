@@ -11,7 +11,6 @@ const SignUpForm = () => {
     const [username, setUsername] = useState("");
     const {toggle, setToggle} = useContext(AuthContext);
 
-console.log(toggle)
     const handleSubmit = (e) =>{
         e.preventDefault();
         Axios.post("http://localhost:3001/api/signup", {email, password, username})
