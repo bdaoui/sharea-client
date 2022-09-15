@@ -1,19 +1,51 @@
 import React from 'react'
+import Box from '@mui/material/Box';
+import Masonry from '@mui/lab/Masonry';
 
 const RandomImages = () => {
-
-
-
+  
+// async function fetchApi() {
+//   let response = await fetch('https://picsum.photos/v2/list');
+//   let data = await response.text();
+//   data.forEach()
+//   console.log(data);
+// }
+// fetchApi();
+const arrayLength = 100;
+const randomArray = [];
+for(let i = 0; i < arrayLength; i++) {randomArray.push(Math.floor(Math.random() * 1000))}
+let output = '';
+const handleImageId = function(imageId){
+output += `<img src="https://picsum.photos/id/${imageId}/300/300" alt="Lorem Picsum Image">`
+}
+randomArray.forEach(handleImageId);
+console.log(output)
 
   return (
     <div> 
       
-     
+      {/* <Box> 
+      <Masonry columns={{sm:1, md:2, lg:3}} spacing={1}>
+        {allImages.map((item, index) => (
+          <div key={item._id}>
+            <img
+              src={item.imageUrl}
+              alt={item.name}
+              loading="lazy"
+              style={{
+                display: 'block',
+                width: '100%',
+              }}
+              className="transition-shadow ease-in-out duration-300 shadow-none hover:shadow-xl"
+            />
+            <p>{item.name}</p>
+            <span>{item.tags}</span>
+          </div>
+        ))}
+      </Masonry>
+    </Box> */}
 
-      <div >eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
 
-    </div>
-    
     </div>
   )
 }

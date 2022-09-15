@@ -1,34 +1,51 @@
 import React, {useState, useContext, useEffect} from 'react';
 import service from "../../Context/AppContext";
 import {AuthContext} from '../../Context/Context';
+import Box from '@mui/material/Box';
+import Masonry from '@mui/lab/Masonry';
 
 const Images = () => {
   const {user, setUser} = useContext(AuthContext);
   const [allImages, setAllImages] = useState([]);
+  const id = user._id;
 
   useEffect(() =>{
     service
-    .imageById(user._id)
-    .then(allImages =>{
-      setAllImages(allImages);
-      console.log("this are all my images ", allImages);
-
-    })
-    .catch(err => console.log(err));
-
+      .imageById(id)
+      .then(allImages =>{setAllImages(allImages)})
+      .catch(err => console.log(err));
 },[] ) 
 
 
   return (
-    <div className='flex flex-col'> 
-    
+    <div className='mt-10'>
+      <h1>Your images</h1>
+    <Box> 
+      <Masonry columns={{sm:1, md:2, lg:3}} spacing={1}>
+        {allImages.map((item, index) => (
+          <div key={item._id}>
+            <img
+              src={item.imageUrl}
+              alt={item.name}
+              loading="lazy"
+              style={{
+                display: 'block',
+                width: '100%',
+              }}
+              className="transition-shadow ease-in-out duration-300 shadow-none hover:shadow-xl"
+            />
+            <p>{item.name}</p>
+            <span>{item.tags}</span>
+          </div>
+        ))}
+      </Masonry>
+    </Box>
 
 
-      <div>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
 
     </div>
     
-    </div>  )
+  )
 }
 
 export default Images
