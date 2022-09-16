@@ -32,7 +32,7 @@ const Upload = () =>  {
   };
 
   return (
-    <div className="relative flex flex-col justify-center min-h-screen overflow-hidden bg-sky-400 font-amita mr-1 rounded">
+    <div className="relative flex flex-col justify-center min-h-screen overflow-hidden bg-gray-50 font-amita mr-1 rounded">
     <div className="w-full p-6 m-auto bg-sky-400 rounded-md ">
         
         <h1 className="text-3xl text-gray-50 font-amita font-semibold text-center uppercase decoration-wavy">

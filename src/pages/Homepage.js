@@ -28,7 +28,7 @@ useEffect(() =>{
 
 
   return (
-    <div className="flex flex-col bg-gray-50 mt-0 ">
+    <div className="flex flex-col bg-gray-50 mt-0">
       <h1 className="bg-sky-400 font-amita tracking-widest font-black text-gray-50 mt-0">Welcome to SHH-AREA, {user && user.username}</h1>
       <Search character={character} setCharacter={setCharacter} />
       <div className="flex flex-row"> 

@@ -33,7 +33,7 @@ useEffect(() =>{
               }}
               className="rounded-md"
             />
-            <p className='rounded-mb font-amita font-black text-gray-50 text-lg'>This image was posted by: {item.author}</p>
+            <p className='rounded-md font-amita font-black text-gray-50 text-lg'>This image was posted by: {item.author}</p>
             <span className='font-amita font-semibold text-gray-50 text-sm'>Want this image? Click below</span><br></br>
             <a className='font-amita font-bold text-gray-50 text-base italic' href={item.url} target="_blank">{item.url}</a>
           </div>

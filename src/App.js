@@ -15,7 +15,7 @@ function App() {
   const authUser = user;
 
   return (
-    <div className="App">
+    <div className="App scrollbar-hide md:scrollbar-hide lg:scrollbar-hide">
     { authUser && 
     <Routes>
       <Route element={<OutletComponent /> } >
