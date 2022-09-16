@@ -1,5 +1,5 @@
 import React, {useContext, useState} from 'react';
-import {AuthContext} from '../../Context/Context';
+import {AuthContext} from '../../context/Context';
 import Axios from 'axios';
 
 

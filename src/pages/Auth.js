@@ -1,7 +1,7 @@
 import React, {useContext} from 'react'
 import Login from '../Components/Auth/Login';
 import Signup from '../Components/Auth/Signup';
-import {AuthContext} from '../Context/Context';
+import {AuthContext} from '../context/Context';
 
 
 

@@ -1,5 +1,5 @@
 import { useState , useContext} from "react";
-import { AuthContext } from "../../Context/Context";
+import { AuthContext } from "../../context/Context";
 
 
 function Search({character, setCharacter}) {

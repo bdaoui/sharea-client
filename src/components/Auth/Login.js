@@ -1,7 +1,7 @@
 import React, {useState, useContext} from 'react';
 import {useNavigate} from "react-router-dom";
 import Axios from "axios";
-import {AuthContext} from '../../Context/Context';
+import {AuthContext} from '../../context/Context';
 
 const LoginForm = () => {
     const navigate = useNavigate();

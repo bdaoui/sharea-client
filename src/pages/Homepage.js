@@ -1,6 +1,6 @@
 import React, { useContext, useState, useEffect } from "react";
 import Feed from "../Components/Homepage/Feed";
-import { AuthContext } from "../Context/Context";
+import { AuthContext } from "../context/Context";
 import Upload from '../Components/Homepage/Upload';
 import Search from "../Components/Homepage/Search";
 import service from "../Context/AppContext";

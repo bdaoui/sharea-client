@@ -1,7 +1,7 @@
 import React, {useState, useEffect, useContext} from 'react'
 import {useParams} from 'react-router-dom';
 import service from '../Context/AppContext';
-import {AuthContext} from '../Context/Context';
+import {AuthContext} from '../context/Context';
 
 const ImageId = () => {
 const [image, setImage] = useState({});

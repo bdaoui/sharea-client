@@ -1,7 +1,7 @@
 import React, {useState, useContext} from "react";
 import { useNavigate } from "react-router-dom";
 import service from "../../Context/AppContext";
-import {AuthContext} from '../../Context/Context';
+import {AuthContext} from '../../context/Context';
 
 
 const Upload = () =>  {

@@ -5,7 +5,7 @@ import Homepage from "./Pages/Homepage";
 import Auth from './Pages/Auth';
 import Profile from './Pages/Profile';
 import Error from './Pages/Error';
-import {AuthContext} from './Context/Context'
+import {AuthContext} from './context/Context'
 import {useContext} from 'react';
 import ImageId from './Pages/ImageId';
 

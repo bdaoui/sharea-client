@@ -2,16 +2,11 @@ import React, {useState, useContext} from 'react'
 import { useNavigate } from 'react-router-dom';
 import "./NavBar.css"
 import service from '../../Context/AppContext';
-import {AuthContext} from '../../Context/Context';
+import {AuthContext} from '../../context/Context';
 
 const NavBar = () => {
     const {user} = useContext(AuthContext);
     const authUser = user;
-<<<<<<< HEAD
-    console.log(authUser)
-
-=======
->>>>>>> 1c3a51cc9f0c0037465ca0d8460d6935048024d6
     const [isNavOpen, setIsNavOpen] = useState(false);
 
 
@@ -138,9 +133,4 @@ const NavBar = () => {
     </div>
   );
 }
-<<<<<<< HEAD
-
-export default NavBar;
-=======
 export default NavBar
->>>>>>> 1c3a51cc9f0c0037465ca0d8460d6935048024d6
