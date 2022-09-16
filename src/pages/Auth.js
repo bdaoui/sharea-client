@@ -1,4 +1,4 @@
-import React, {useState, useContext} from 'react'
+import React, {useContext} from 'react'
 import Login from '../Components/Auth/Login';
 import Signup from '../Components/Auth/Signup';
 import {AuthContext} from '../Context/Context';
@@ -6,7 +6,7 @@ import {AuthContext} from '../Context/Context';
 
 
 function Auth() {
-  const {toggle, setToggle} = useContext(AuthContext);
+  const {toggle} = useContext(AuthContext);
 
 
   return (

@@ -7,8 +7,7 @@ const ImageId = () => {
 const [image, setImage] = useState({});
 const {id} = useParams();
 const [comment, setComment] = useState('');
-const {user, setUser} = useContext(AuthContext);
-const {images, setImages} = useContext(AuthContext)
+const {user,} = useContext(AuthContext);
 
 
 useEffect(() => {

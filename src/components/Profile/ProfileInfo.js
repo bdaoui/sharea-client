@@ -5,7 +5,7 @@ import {AuthContext} from '../../Context/Context';
 
 const ProfileInfo = () => {
 const [userInfo, setUserInfo] = useState(null);
-const {user, setUser} = useContext(AuthContext)
+const {user} = useContext(AuthContext)
 const id = user._id;
 
 const getUser = () => {

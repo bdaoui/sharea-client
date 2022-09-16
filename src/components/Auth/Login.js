@@ -1,11 +1,11 @@
-import React, {useEffect, useState, useContext} from 'react';
-import {useNavigate, Link} from "react-router-dom";
+import React, {useState, useContext} from 'react';
+import {useNavigate} from "react-router-dom";
 import Axios from "axios";
 import {AuthContext} from '../../Context/Context';
 
 const LoginForm = () => {
     const navigate = useNavigate();
-    const {user, setUser} = useContext(AuthContext)
+    const {setUser} = useContext(AuthContext)
     const {toggle, setToggle} = useContext(AuthContext)
 
     const [password, setPassword] = useState("");

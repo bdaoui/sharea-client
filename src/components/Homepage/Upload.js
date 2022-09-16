@@ -5,10 +5,9 @@ import {AuthContext} from '../../Context/Context';
 
 
 const Upload = () =>  {
-  const {user, setUser} = useContext(AuthContext)
+  const {user} = useContext(AuthContext)
   const [name, setName] = useState("");
   const [tags, setTags] = useState([]);
-  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();

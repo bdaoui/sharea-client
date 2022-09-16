@@ -6,7 +6,7 @@ import { AuthContext } from '../../Context/Context';
 
 const Feed = ({allImages, setAllImages, character}) => {
 const [searching, setSearching]= useState(allImages)
-const {user, setUser} = useContext(AuthContext)
+const {user} = useContext(AuthContext)
 console.log(user)
 
 useEffect(() =>{

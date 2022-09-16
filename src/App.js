@@ -11,7 +11,7 @@ import ImageId from './Pages/ImageId';
 
 function App() {
   //middleware and protect
-  const {user, setUser} = useContext(AuthContext);
+  const {user} = useContext(AuthContext);
   const authUser = user;
 
   return (
