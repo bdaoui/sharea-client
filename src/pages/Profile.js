@@ -1,4 +1,4 @@
-import React, {useContext, useEffect, useState} from 'react'
+import React, {useContext, useState} from 'react'
 import Info from '../Components/Profile/Info'
 import RandomImages from '../Components/Profile/RandomImages'
 import Images from '../Components/Profile/Images'
@@ -7,7 +7,6 @@ import ProfileInfo from '../Components/Profile/ProfileInfo';
 
 
 const Profile = () => {
-  const {toggle, setToggle} = useContext(AuthContext)
   const [page, setPage] = useState("Images");
 
 

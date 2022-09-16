@@ -2,11 +2,19 @@ import React, {useState, useEffect, useContext} from 'react';
 import service from "../../Context/AppContext";
 import Box from '@mui/material/Box';
 import Masonry from '@mui/lab/Masonry';
+<<<<<<< HEAD
 import {AuthContext} from '../../Context/Context';
 
 const Feed = ({allImages, setAllImages, character}) => {
 const [searching, setSearching]= useState(allImages)
 const {user, setUser} =useContext(AuthContext);
+=======
+import { AuthContext } from '../../Context/Context';
+
+const Feed = ({allImages, setAllImages, character}) => {
+const [searching, setSearching]= useState(allImages)
+const {user} = useContext(AuthContext)
+>>>>>>> 1c3a51cc9f0c0037465ca0d8460d6935048024d6
 console.log(user)
 
 useEffect(() =>{
@@ -41,7 +49,7 @@ useEffect (() => {
   return (
     <div className='bg-gray-50'>
     <Box> 
-      <Masonry className='gap-1 bg-gray-50' columns={{sm:1, md:2, lg:3}} spacing={1}>
+      <Masonry className='bg-gray-50' columns={{sm:1, md:2, lg:3}} spacing={1}>
         {searching && 
         searching.map((item, index) => {
           return (
@@ -54,7 +62,7 @@ useEffect (() => {
                 display: 'block',
                 width: '100%',
               }}
-              className="rounded-md"
+              className="rounded-md overflow-hidden"
             />
             <a className='rounded-md font-amita font-black text-gray-50 text-lg' href={`/image/${item._id}`}>{item.name}
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-6 h-6 inline ml-3">

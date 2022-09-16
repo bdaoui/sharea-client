@@ -2,7 +2,7 @@
 import axios from "axios";
 
 
-const baseURL = "https://smoggy-yak-top-hat.cyclic.app/api"
+const baseURL = "https://smoggy-yak-top-hat.cyclic.app /api"
 
 const service = axios.create({
   baseURL

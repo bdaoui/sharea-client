@@ -5,7 +5,7 @@ import Box from '@mui/material/Box';
 import Masonry from '@mui/lab/Masonry';
 
 const Images = () => {
-  const {user, setUser} = useContext(AuthContext);
+  const {user} = useContext(AuthContext);
   const [allImages, setAllImages] = useState([]);
   const id = user._id;
 

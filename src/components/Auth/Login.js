@@ -1,11 +1,11 @@
-import React, {useEffect, useState, useContext} from 'react';
-import {useNavigate, Link} from "react-router-dom";
+import React, {useState, useContext} from 'react';
+import {useNavigate} from "react-router-dom";
 import Axios from "axios";
 import {AuthContext} from '../../Context/Context';
 
 const LoginForm = () => {
     const navigate = useNavigate();
-    const {user, setUser} = useContext(AuthContext)
+    const {setUser} = useContext(AuthContext)
     const {toggle, setToggle} = useContext(AuthContext)
 
     const [password, setPassword] = useState("");
@@ -14,7 +14,7 @@ const LoginForm = () => {
     const handleLogin = (e) =>{
         e.preventDefault();
         Axios
-            .post("https://smoggy-yak-top-hat.cyclic.app/api/signin", { username, password })
+            .post("https://smoggy-yak-top-hat.cyclic.app /api/signin", { username, password })
             .then(response => {
                 localStorage.setItem("token", JSON.stringify(response.data))
                 setUser(response.data)

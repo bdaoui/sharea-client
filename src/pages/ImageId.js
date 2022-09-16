@@ -7,8 +7,7 @@ const ImageId = () => {
 const [image, setImage] = useState({});
 const {id} = useParams();
 const [comment, setComment] = useState('');
-const {user, setUser} = useContext(AuthContext);
-const {images, setImages} = useContext(AuthContext)
+const {user,} = useContext(AuthContext);
 
 
 useEffect(() => {
@@ -46,7 +45,7 @@ const handleCommentDelete = (d) => {
   return (
     <div className='h-screen flex bg-gradient-to-r from-sky-400 via-gray-50 to-sky-400 mt-0'>
       
-<div className="h-screen overflow-hidden w-48 flex -sky-400 ">
+<div className="hidden md:flex lg:flex h-screen overflow-hidden w-48 -sky-400 ">
     <div className="w-full p-6 m-auto -sky-400 rounded-md align-middle justify-center">       
         <h1 className="text-3xl text-gray-50 font-amita font-semibold text-center uppercase decoration-wavy">
             Add your comment
@@ -66,12 +65,12 @@ const handleCommentDelete = (d) => {
 
 { user &&
     <>
-    <div className=' -gradient-to-r from-sky-400 via-gray-50 to-sky-400 rounded-md w-4/6 flex'>
+    <div className='rounded-md w-4/6 flex flex-col align-middle justify-center '>
      <img className='flex justify-center align-middle object-center object-contain rounded-2xl' src={image?.imageUrl} alt={image?.name}/>
     </div>
 
 
-<div className='flex-1 flex overflow-hidden'>
+<div className='flex-1 flex flex-col overflow-hidden'>
 <div className='flex-1 overflow-y-scroll -sky-400' >
        <div className='pb-10'>
       <h3 className='font-amita font-black text-gray-50 text-3xl pt-5'>{image?.name}</h3>

@@ -5,12 +5,15 @@ import service from '../../Context/AppContext';
 import {AuthContext} from '../../Context/Context';
 
 const NavBar = () => {
-    const {user, setUser} = useContext(AuthContext);
+    const {user} = useContext(AuthContext);
     const authUser = user;
+<<<<<<< HEAD
     console.log(authUser)
 
+=======
+>>>>>>> 1c3a51cc9f0c0037465ca0d8460d6935048024d6
     const [isNavOpen, setIsNavOpen] = useState(false);
-    const navigate = useNavigate();
+
 
     function doLogout () {
         service
@@ -135,5 +138,9 @@ const NavBar = () => {
     </div>
   );
 }
+<<<<<<< HEAD
 
 export default NavBar;
+=======
+export default NavBar
+>>>>>>> 1c3a51cc9f0c0037465ca0d8460d6935048024d6
