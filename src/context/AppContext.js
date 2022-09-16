@@ -76,11 +76,5 @@ const deleteCommentById = (id) =>{
     .catch(err => console.log(err))
 }
 
-// const getProfileById = (id) =>{
-//   return service 
-//     .get(`/profile/${id}`)
-//     .then(res => res.data)
-//     .catch(err => console.log(err))
-// }
-
+// eslint-disable-next-line react-hooks/exhaustive-deps
 export default { baseURL, service, image, uploadImage, createImage, handleLogout, imagesByOwner, imageById, commentById, deleteById, deleteCommentById};
