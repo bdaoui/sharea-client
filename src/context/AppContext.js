@@ -76,5 +76,5 @@ const deleteCommentById = (id) =>{
     .catch(err => console.log(err))
 }
 
- const functions = { baseURL, service, image, uploadImage, createImage, handleLogout, imagesByOwner, imageById, commentById, deleteById, deleteCommentById};
- export default functions;
+// eslint-disable-next-line
+export default { baseURL, service, image, uploadImage, createImage, handleLogout, imagesByOwner, imageById, commentById, deleteById, deleteCommentById};
