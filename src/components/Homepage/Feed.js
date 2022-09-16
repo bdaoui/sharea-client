@@ -2,10 +2,11 @@ import React, {useState, useEffect, useContext} from 'react';
 import service from "../../Context/AppContext";
 import Box from '@mui/material/Box';
 import Masonry from '@mui/lab/Masonry';
+import {AuthContext} from '../../Context/Context';
 
 const Feed = ({allImages, setAllImages, character}) => {
 const [searching, setSearching]= useState(allImages)
-const {user, setUser} =useContext(AuthContext)
+const {user, setUser} =useContext(AuthContext);
 console.log(user)
 
 useEffect(() =>{
