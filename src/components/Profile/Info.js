@@ -1,6 +1,7 @@
 import React, {useContext, useState} from 'react';
 import {AuthContext} from '../../context/Context';
 import Axios from 'axios';
+import {Link} from "react-router-dom";
 
 
 
@@ -25,7 +26,7 @@ const handleUpdate = (e) =>{
   console.log(location ,occupation, info, id)
   e.preventDefault();
   Axios
-      .post("https://smoggy-yak-top-hat.cyclic.app /api/profile", { location, occupation, info, id })
+      .post("https://smoggy-yak-top-hat.cyclic.app/api/profile", { location, occupation, info, id })
       .then(response => console.log(response.data))
       .catch(err => console.log(err));
       setTimeout(function(){ window.location.reload(); }, 1000)
@@ -41,10 +42,10 @@ const handleUpdate = (e) =>{
     <div className='bg-gray-50'>
       <h3 className='rounded-md font-amita font-black text-sky-400 font-bold text-lg tracking-widest' >Hello, <span className='font-black'>{user.username}</span> </h3><br></br>
       <p className='rounded-md font-amita font-bold text-sky-400 text-lg tracking-widest' >Welcome to your SHH-AREA</p><br></br>
-      <a className="flex flex-row italic justify-center rounded-md font-amita font-bold text-sky-400 text-lg tracking-widest" onClick={toggler}>Feel free to add your info here!  
+      <Link className="flex flex-row italic justify-center rounded-md font-amita font-bold text-sky-400 text-lg tracking-widest" onClick={toggler}>Feel free to add your info here!  
        <svg onClick={toggler} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="ml-2 inline w-6 h-6">
         <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9M3.75 20.25v-4.5m0 4.5h4.5m-4.5 0L9 15M20.25 3.75h-4.5m4.5 0v4.5m0-4.5L15 9m5.25 11.25h-4.5m4.5 0v-4.5m0 4.5L15 15" />
-        </svg></a>
+        </svg></Link>
 
      </div>
 

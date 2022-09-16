@@ -2,6 +2,7 @@ import React, {useState, useContext} from 'react';
 import {useNavigate} from "react-router-dom";
 import Axios from "axios";
 import {AuthContext} from '../../context/Context';
+import {Link} from "react-router-dom";
 
 const LoginForm = () => {
     const navigate = useNavigate();
@@ -14,7 +15,7 @@ const LoginForm = () => {
     const handleLogin = (e) =>{
         e.preventDefault();
         Axios
-            .post("https://smoggy-yak-top-hat.cyclic.app /api/signin", { username, password })
+            .post("https://smoggy-yak-top-hat.cyclic.app/api/signin", { username, password })
             .then(response => {
                 localStorage.setItem("token", JSON.stringify(response.data))
                 setUser(response.data)
@@ -76,7 +77,7 @@ const LoginForm = () => {
                 </button>
             </div>
 
-            <a className='text-gray-50 font-semibold font-amita text-lg mt-10' onClick={toggler}>Need an account? <button className='font-semibold text-xl mt-10'> Sign up</button></a>
+            <Link className='text-gray-50 font-semibold font-amita text-lg mt-10' onClick={toggler}>Need an account? <button className='font-semibold text-xl mt-10'> Sign up</button></Link>
 
         </form>
     </div>

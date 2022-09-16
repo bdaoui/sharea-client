@@ -1,5 +1,5 @@
 import React, {useState, useContext} from 'react';
-import {useNavigate} from "react-router-dom";
+import {useNavigate, Link} from "react-router-dom";
 import Axios from "axios";
 import {AuthContext} from '../../context/Context';
 
@@ -13,7 +13,7 @@ const SignUpForm = () => {
 
     const handleSubmit = (e) =>{
         e.preventDefault();
-        Axios.post("https://smoggy-yak-top-hat.cyclic.app /api/signup", {email, password, username})
+        Axios.post("https://smoggy-yak-top-hat.cyclic.app/api/signup", {email, password, username})
             .then(response => console.log(response))
             .catch(err => console.log(err));
             navigate("/");
@@ -85,7 +85,7 @@ const SignUpForm = () => {
                         </button>
                     </div>
 
-                    <a className='text-gray-50 font-semibold font-amita text-lg mt-10' onClick={toggler}>ALREADY PART OF THE FAMILY? <button className='font-black text-xl mt-10'> LOG IN</button></a>
+                    <Link className='text-gray-50 font-semibold font-amita text-lg mt-10' onClick={toggler}>ALREADY PART OF THE FAMILY? <button className='font-black text-xl mt-10'> LOG IN</button></Link>
                 
 
                 </form>

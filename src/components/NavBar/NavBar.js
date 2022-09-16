@@ -1,5 +1,5 @@
 import React, {useState, useContext} from 'react'
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import "./NavBar.css"
 import service from '../../context/AppContext';
 import {AuthContext} from '../../context/Context';
@@ -21,7 +21,7 @@ const NavBar = () => {
     
     <div className="bg-sky-400 flex items-center justify-between py-4 px-5">
       
-      <a href="/homepage" className='text-white font-black font-amita text-3xl'>SHH-AREA</a>
+      <Link  to="/homepage" className='text-white font-black font-amita text-3xl'>SHH-AREA</Link>
       
       <nav>
 
@@ -54,7 +54,7 @@ const NavBar = () => {
             {authUser && 
               
               <li className="border-b border-gray-400 my-8">
-                <a href="/profile">PROFILE</a>
+                <Link  to="/profile">PROFILE</Link>
               </li>
             }
           
@@ -62,7 +62,7 @@ const NavBar = () => {
             {!authUser &&
 
               <li className="border-b border-gray-400 my-8">
-                <a href="/">LOGIN</a>
+                <Link  to="/">LOGIN</Link>
               </li>
 
             }
@@ -85,7 +85,7 @@ const NavBar = () => {
          {authUser &&
 
           <li>
-            <a href="/profile">PROFILE</a>
+            <Link  to="/profile">PROFILE</Link>
           </li>
          
          
@@ -94,7 +94,7 @@ const NavBar = () => {
           
           {!authUser &&
           <li>
-            <a href="/">LOGIN</a>
+            <Link  to="/">LOGIN</Link>
           </li>
           
           }

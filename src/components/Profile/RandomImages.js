@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import Box from '@mui/material/Box';
 import Masonry from '@mui/lab/Masonry';
+import {Link} from "react-router-dom";
+
 
 const RandomImages = () => {
 const [pics, setPics] = useState([])
@@ -35,7 +37,7 @@ useEffect(() =>{
             />
             <p className='rounded-md font-amita font-black text-gray-50 text-lg'>This image was posted by: {item.author}</p>
             <span className='font-amita font-semibold text-gray-50 text-sm'>Want this image? Click below</span><br></br>
-            <a className='font-amita font-bold text-gray-50 text-base italic' href={item.url} target="_blank">{item.url}</a>
+            <Link className='font-amita font-bold text-gray-50 text-base italic' href={item.url} target="_blank">{item.url}</Link>
           </div>
         ))}
       </Masonry>
