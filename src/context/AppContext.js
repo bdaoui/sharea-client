@@ -77,4 +77,5 @@ const deleteCommentById = (id) =>{
 }
 
 // eslint-disable-next-line react-hooks/exhaustive-deps
-export default { baseURL, service, image, uploadImage, createImage, handleLogout, imagesByOwner, imageById, commentById, deleteById, deleteCommentById};
+ const functions = { baseURL, service, image, uploadImage, createImage, handleLogout, imagesByOwner, imageById, commentById, deleteById, deleteCommentById};
+ export default functions;
