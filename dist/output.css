@@ -627,6 +627,14 @@ video {
   margin-left: 0.5rem;
 }
 
+.mb-10 {
+  margin-bottom: 2.5rem;
+}
+
+.mb-20 {
+  margin-bottom: 5rem;
+}
+
 .block {
   display: block;
 }
@@ -671,6 +679,10 @@ video {
   height: 1.75rem;
 }
 
+.h-auto {
+  height: auto;
+}
+
 .min-h-screen {
   min-height: 100vh;
 }
@@ -709,6 +721,10 @@ video {
 
 .w-7 {
   width: 1.75rem;
+}
+
+.w-auto {
+  width: auto;
 }
 
 .min-w-0 {
@@ -767,6 +783,10 @@ video {
 
 .gap-1 {
   gap: 0.25rem;
+}
+
+.gap-10 {
+  gap: 2.5rem;
 }
 
 .space-y-2 > :not([hidden]) ~ :not([hidden]) {
@@ -923,6 +943,10 @@ video {
 
 .fill-sky-400 {
   fill: #38bdf8;
+}
+
+.fill-inherit {
+  fill: inherit;
 }
 
 .object-contain {
@@ -1274,6 +1298,14 @@ video {
 }
 
 @media (min-width: 640px) {
+  .sm\:mt-10 {
+    margin-top: 2.5rem;
+  }
+
+  .sm\:mb-10 {
+    margin-bottom: 2.5rem;
+  }
+
   .sm\:hidden {
     display: none;
   }
@@ -1284,8 +1316,24 @@ video {
     visibility: visible;
   }
 
+  .md\:m-0 {
+    margin: 0px;
+  }
+
+  .md\:mt-1 {
+    margin-top: 0.25rem;
+  }
+
+  .md\:mb-1 {
+    margin-bottom: 0.25rem;
+  }
+
   .md\:flex {
     display: flex;
+  }
+
+  .md\:gap-1 {
+    gap: 0.25rem;
   }
 
   .md\:scrollbar-hide {
@@ -1303,6 +1351,18 @@ video {
     visibility: visible;
   }
 
+  .lg\:m-0 {
+    margin: 0px;
+  }
+
+  .lg\:mt-1 {
+    margin-top: 0.25rem;
+  }
+
+  .lg\:mb-1 {
+    margin-bottom: 0.25rem;
+  }
+
   .lg\:flex {
     display: flex;
   }
@@ -1313,6 +1373,10 @@ video {
 
   .lg\:max-w-xl {
     max-width: 36rem;
+  }
+
+  .lg\:gap-1 {
+    gap: 0.25rem;
   }
 
   .lg\:scrollbar-hide {
