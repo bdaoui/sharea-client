@@ -26,7 +26,7 @@ const handleUpdate = (e) =>{
   console.log(location ,occupation, info, id)
   e.preventDefault();
   Axios
-      .post("http://localhost:3001/api/profile", { location, occupation, info, id })
+      .post("https://smoggy-yak-top-hat.cyclic.app/api/profile", { location, occupation, info, id })
       .then(response => console.log(response.data))
       .catch(err => console.log(err));
       setTimeout(function(){ window.location.reload(); }, 1000)
