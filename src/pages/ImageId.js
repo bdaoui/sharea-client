@@ -44,52 +44,60 @@ const handleCommentDelete = (d) => {
 // console.log('hello', image.owner.username, 'comment', image.comments)
 
   return (
-    <div>
-
+    <div className='h-screen flex bg-gradient-to-r from-sky-400 via-gray-50 to-sky-400 mt-0'>
+      
+<div className="h-screen overflow-hidden w-48 flex -sky-400 ">
+    <div className="w-full p-6 m-auto -sky-400 rounded-md align-middle justify-center">       
+        <h1 className="text-3xl text-gray-50 font-amita font-semibold text-center uppercase decoration-wavy">
+            Add your comment
+        </h1>
+        <form className="mt-6" onSubmit={handleSubmit}>
+            <div className="mb-2">
+                <label for="comment" className="block text-base text-gray-50 font-amita font-semibold">
+                    Comment goes here: 
+                </label>
+                <textarea type="text" className="block w-full h-60 px-4 py-2 mt-2 mb-5 tracking-widest font-amita text-gray-700 -white border rounded-md focus:border-gray-400 focus:ring-gray-300 focus:outline-none focus:ring focus:ring-opacity-40"
+                    placeholder='Now that is magic' onChange={(e) => setComment(e.target.value)} value={comment}/>
+            </div>           
+            <button className="w-full bg-space px-4 py-2 font-amita text-gray-50 text-lg font-black tracking-widest transition-colors duration-200 transform rounded-md hover:-gray-600 focus:outline-none focus:-gray-600" type="submit">Comment!!!</button>
+        </form>
+    </div>
+</div>
 
 { user &&
     <>
-     <img src={image?.imageUrl} alt={image?.name} />
-      <h3>{image?.name}</h3>
-      <h5>{image?.tags}</h5>
-      <h6>Image posted by: {image?.owner?.username}</h6> 
-      {image?.comments?.map(comment => <h3 key={comment?._id}>
-        
-        {comment?.comment}
-        <svg onClick={() => handleCommentDelete(comment._id)} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+    <div className=' -gradient-to-r from-sky-400 via-gray-50 to-sky-400 rounded-md w-4/6 flex'>
+     <img className='flex justify-center align-middle object-center object-contain rounded-2xl' src={image?.imageUrl} alt={image?.name}/>
+    </div>
+
+
+<div className='flex-1 flex overflow-hidden'>
+<div className='flex-1 overflow-y-scroll -sky-400' >
+       <div className='pb-10'>
+      <h3 className='font-amita font-black text-gray-50 text-3xl pt-5'>{image?.name}</h3>
+      <h5 className='font-amita font-black -sky-400 text-gray-50 text-lg p-1'>{image?.tags}</h5>
+      <h6 className='font-amita font-black text-gray-50 text-lg p-5'>Image posted by: {image?.owner?.username}</h6> 
+      </div>
+      
+
+      <div className='-sky-400 fill-sky-400'>
+        <h1 className='text-gray-50 font-black text-3xl tracking-widest'>Comments: </h1>
+      {image?.comments?.map(comment => 
+      
+      
+      <h3 className='rounded-md font-amita font-black text-gray-50 text-base pt-10' key={comment?._id}>
+        <span>{comment?.owner?.username} posted: </span> {comment?.comment}
+        <svg onClick={() => handleCommentDelete(comment._id)} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-6 h-6 inline ml-10">
       <path stroke-linecap="round" stroke-linejoin="round" d="M15 12H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
       </svg>
         
         </h3>)}
-      
-  
+        </div>
+     </div> 
+  </div>
 </>    
 }
    
-
-
-    <div className="relative flex flex-col justify-center min-h-screen overflow-hidden">
-    <div className="w-full p-6 m-auto bg-white rounded-md  lg:max-w-xl">
-        
-        <h1 className="text-3xl font-semibold text-center text-gray-700 uppercase decoration-wavy">
-            Add your comment
-        </h1>
-
-        <form className="mt-6" onSubmit={handleSubmit}>
-
-            <div className="mb-2">
-                <label for="comment" className="block text-lg font-semibold text-gray-800">
-                    Comment goes here
-                </label>
-                <input type="text" className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border rounded-md focus:border-gray-400 focus:ring-gray-300 focus:outline-none focus:ring focus:ring-opacity-40 mb-5"
-                    placeholder='Comment on this pic' onChange={(e) => setComment(e.target.value)} value={comment}/>
-            </div>
-            
-            <button className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600 mt-5" type="submit">Comment!!!</button>
-
-        </form>
-    </div>
-</div>
     </div>
   )
 }

@@ -11,17 +11,15 @@ const Profile = () => {
   const [page, setPage] = useState("Images");
 
 
-
   return (
     <div>
       
-      <section id='hidden' className='flex justify-center gap-9 m-5'>
-     <div>
-        <button className="w-50 px-4 m-8 py-2 tracking-wide text-white transition-colors duration-200 transform bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600" onClick={()=>setPage("RandomImages")}>Random Images</button>
+     <div className='bg-sky-400'>
+        <button className="w-full bg-sky-400 px-4 py-2 font-amita text-gray-50 text-lg font-black tracking-widest transition-colors duration-200 transform rounded-md hover:bg-gray-50 hover:text-sky-400 focus:outline-none focus:bg-gray-50 focus:text-sky-400" onClick={()=>setPage("RandomImages")}>Random Images</button>
 
-        <button  className="w-51 px-4 m-8 py-2 tracking-wide text-white transition-colors duration-200 transform bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600" onClick={() =>setPage('Images')}>My Images</button>
+        <button  className="w-full bg-sky-40 px-4 py-2 font-amita text-gray-50 text-lg font-black tracking-widest transition-colors duration-200 transform rounded-md hover:bg-gray-50 hover:text-sky-400 focus:outline-none focus:bg-gray-50 focus:text-sky-400" onClick={() =>setPage('Images')}>My Images</button>
     </div>
-      </section> 
+       
 
     <div>
     {page === "Images" && <>
