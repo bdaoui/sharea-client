@@ -10,7 +10,7 @@ const id = user._id;
 
 const getUser = () => {
     axios
-    .get(`http://localhost:3001/api/user/${id}`)
+    .get(`https://smoggy-yak-top-hat.cyclic.app/api/user/${id}`)
     .then(response => { 
         return setUserInfo(response.data)})
     .catch((err) => console.log(err))  

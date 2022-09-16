@@ -9,6 +9,7 @@ const NavBar = () => {
     const authUser = user;
     console.log(authUser)
 
+
     const [isNavOpen, setIsNavOpen] = useState(false);
     const navigate = useNavigate();
 
@@ -66,6 +67,7 @@ const NavBar = () => {
               <li className="border-b border-gray-400 my-8">
                 <a href="/">LOGIN</a>
               </li>
+
             }
               {authUser &&
 
@@ -75,6 +77,7 @@ const NavBar = () => {
             
 
               }
+
 
             
             </ul>
@@ -134,4 +137,4 @@ const NavBar = () => {
     </div>
   );
 }
-export default NavBar;  
+

@@ -10,6 +10,7 @@ const Profile = () => {
   const {toggle, setToggle} = useContext(AuthContext)
   const [page, setPage] = useState("Images");
 
+
   return (
     <div>
       
