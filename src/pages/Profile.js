@@ -1,9 +1,9 @@
 import React, {useContext, useState} from 'react'
-import Info from '../Components/Profile/Info'
-import RandomImages from '../Components/Profile/RandomImages'
-import Images from '../Components/Profile/Images'
+import Info from '../components/Profile/Info'
+import RandomImages from '../components/Profile/RandomImages'
+import Images from '../components/Profile/Images'
 import {AuthContext} from '../context/Context';
-import ProfileInfo from '../Components/Profile/ProfileInfo';
+import ProfileInfo from '../components/Profile/ProfileInfo';
 
 
 const Profile = () => {

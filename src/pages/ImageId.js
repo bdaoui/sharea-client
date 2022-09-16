@@ -1,6 +1,6 @@
 import React, {useState, useEffect, useContext} from 'react'
 import {useParams} from 'react-router-dom';
-import service from '../Context/AppContext';
+import service from '../context/AppContext';
 import {AuthContext} from '../context/Context';
 
 const ImageId = () => {

@@ -679,12 +679,12 @@ video {
   min-height: 250px;
 }
 
-.w-48 {
-  width: 12rem;
-}
-
 .w-full {
   width: 100%;
+}
+
+.w-48 {
+  width: 12rem;
 }
 
 .w-4\/6 {
@@ -970,6 +970,11 @@ video {
   vertical-align: middle;
 }
 
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
 .text-9xl {
   font-size: 8rem;
   line-height: 1;
@@ -983,11 +988,6 @@ video {
 .text-base {
   font-size: 1rem;
   line-height: 1.5rem;
-}
-
-.text-lg {
-  font-size: 1.125rem;
-  line-height: 1.75rem;
 }
 
 .text-xl {
@@ -1231,12 +1231,6 @@ video {
 
 .focus\:ring-opacity-40:focus {
   --tw-ring-opacity: 0.4;
-}
-
-@media (min-width: 640px) {
-  .sm\:hidden {
-    display: none;
-  }
 }
 
 @media (min-width: 768px) {

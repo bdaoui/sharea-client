@@ -1,5 +1,5 @@
 import React, {useState, useEffect, useContext} from 'react';
-import service from "../../Context/AppContext";
+import service from "../../context/AppContext";
 import Box from '@mui/material/Box';
 import Masonry from '@mui/lab/Masonry';
 import { AuthContext } from '../../context/Context';

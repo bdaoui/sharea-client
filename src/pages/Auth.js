@@ -1,6 +1,6 @@
 import React, {useContext} from 'react'
-import Login from '../Components/Auth/Login';
-import Signup from '../Components/Auth/Signup';
+import Login from '../components/Auth/Login';
+import Signup from '../components/Auth/Signup';
 import {AuthContext} from '../context/Context';
 
 

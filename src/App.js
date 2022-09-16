@@ -1,13 +1,13 @@
 import './App.css';
 import {Routes, Route } from "react-router-dom";
-import OutletComponent from "./Components/NavBar/OutletComponent";
-import Homepage from "./Pages/Homepage";
-import Auth from './Pages/Auth';
-import Profile from './Pages/Profile';
-import Error from './Pages/Error';
+import OutletComponent from "./components/NavBar/OutletComponent";
+import Homepage from "./pages/Homepage";
+import Auth from './pages/Auth';
+import Profile from './pages/Profile';
+import Error from './pages/Error';
 import {AuthContext} from './context/Context'
 import {useContext} from 'react';
-import ImageId from './Pages/ImageId';
+import ImageId from './pages/ImageId';
 
 function App() {
   //middleware and protect

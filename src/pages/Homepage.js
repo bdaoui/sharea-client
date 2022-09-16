@@ -1,9 +1,9 @@
 import React, { useContext, useState, useEffect } from "react";
-import Feed from "../Components/Homepage/Feed";
+import Feed from "../components/Homepage/Feed";
 import { AuthContext } from "../context/Context";
-import Upload from '../Components/Homepage/Upload';
-import Search from "../Components/Homepage/Search";
-import service from "../Context/AppContext";
+import Upload from '../components/Homepage/Upload';
+import Search from "../components/Homepage/Search";
+import service from "../context/AppContext";
 
 
 const Homepage = () => {
