@@ -8,7 +8,7 @@ const random = Math.floor(Math.random() * 30)
 
 async function fetchApi() {
   let response = await fetch(`https://picsum.photos/v2/list?page=${random}&limit=100%27`);
-  let data = await response.json();
+  let data = await response.json()
   setPics(data);
   console.log(data, 'hello')
 }
@@ -17,12 +17,12 @@ useEffect(() =>{
 },[] ) 
 
   return (
-    <div> 
+    <div className='bg-gray-50'>
       
       <Box> 
-      <Masonry columns={{sm:1, md:2, lg:3}} spacing={1}>
+      <Masonry className='gap-1 bg-gray-50' columns={{sm:1, md:2, lg:3}} spacing={1}>
         {pics.map((item, index) => (
-          <div key={item.id}>
+          <div className='flex flex-col bg-sky-400 rounded p-1 shadow duration-300 shadow-neutral-900 hover:shadow-xl' key={item.id}>
             <img
               src={item.download_url}
               alt={item.name}
@@ -31,11 +31,11 @@ useEffect(() =>{
                 display: 'block',
                 width: '100%',
               }}
-              className="transition-shadow ease-in-out duration-300 shadow-none hover:shadow-xl"
+              className="rounded-md"
             />
-            <p>{item.author}</p>
-            <span className='italic'>Like this image? Click below</span><br></br>
-            <a href={item.url} target="_blank">{item.url}</a>
+            <p className='rounded-md font-amita font-black text-gray-50 text-lg'>This image was posted by: {item.author}</p>
+            <span className='font-amita font-semibold text-gray-50 text-sm'>Want this image? Click below</span><br></br>
+            <a className='font-amita font-bold text-gray-50 text-base italic' href={item.url} target="_blank">{item.url}</a>
           </div>
         ))}
       </Masonry>

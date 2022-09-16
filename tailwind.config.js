@@ -2,7 +2,15 @@
 module.exports = {
   content: ["./src/**/*.{html,js}"],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+          'space': "url('/src/Assets/background.jpg')",
+      },
+      fontFamily: {
+          'amita ': ['Montserrat', 'sans-serif']
+      }
+    },
   },
-  plugins: [],
+  
+  plugins: [ require('tailwind-scrollbar-hide')],
 }

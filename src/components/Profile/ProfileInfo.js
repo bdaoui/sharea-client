@@ -24,9 +24,9 @@ getUser()
 
   return (
     <div>
-<h3>{userInfo?.location}</h3>
-<h3>{userInfo?.occupation}</h3>
-<h3>{userInfo?.info}</h3>
+<h3 className='bg-sky-400 rounded-md font-amita text-lg font-bold text-gray-50 tracking-widest'>I am from: {userInfo?.location}</h3>
+<h3 className='bg-sky-400 rounded-md font-amita text-lg font-bold text-gray-50 tracking-widest'>My occupation is: {userInfo?.occupation}</h3>
+<h3 className='bg-sky-400 rounded-md font-amita text-lg font-bold text-gray-50 tracking-widest'>More information: {userInfo?.info}</h3>
     </div>
 
   )
