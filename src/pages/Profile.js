@@ -1,8 +1,7 @@
-import React, {useContext, useState} from 'react'
+import React, {useState} from 'react'
 import Info from '../components/Profile/Info'
 import RandomImages from '../components/Profile/RandomImages'
 import Images from '../components/Profile/Images'
-import {AuthContext} from '../context/Context';
 import ProfileInfo from '../components/Profile/ProfileInfo';
 
 

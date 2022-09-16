@@ -17,7 +17,7 @@ useEffect(() => {
     console.log(image)
     return setImage(image)})
   .catch(err => console.log(err));
-}, []) 
+}, [id]) 
 
 const handleSubmit = (e) => {
   e.preventDefault();
