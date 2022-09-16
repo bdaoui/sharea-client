@@ -6,6 +6,9 @@ import {AuthContext} from '../../Context/Context';
 
 const NavBar = () => {
     const {user, setUser} = useContext(AuthContext);
+    const authUser = user;
+    console.log(authUser)
+
     const [isNavOpen, setIsNavOpen] = useState(false);
     const navigate = useNavigate();
 
@@ -48,32 +51,64 @@ const NavBar = () => {
             </div>
 
             <ul className="MENU-LINK-MOBILE-OPEN flex flex-col items-center justify-between min-h-[250px]">
+              
+            {authUser && 
+              
               <li className="border-b border-gray-400 my-8 uppercase">
                 <a href="/profile">Profile</a>
               </li>
+
+            }
+
+            {authUser &&
+
               <li className="border-b border-gray-400 my-8 uppercase">
                 <a href="/">Login</a>
               </li>
+            }
+              {authUser &&
 
               <li className="border-b border-gray-400 my-8 uppercase">
                 <button onClick={doLogout}>LOGOUT</button>
               </li>
             
+
+              }
+
             
             </ul>
           </div>
         </section>
 
         <ul className="DESKTOP-MENU text-white hidden space-x-8 lg:flex">
+         
+         {authUser &&
+
           <li>
             <a href="/profile">Profile</a>
           </li>
+         
+         
+
+         }
+          
+          {!authUser &&
           <li>
             <a href="/">Login</a>
           </li>
+          
+          }
+          
+          {authUser &&
+
           <li>
             <button onClick={doLogout}>Logout</button>
           </li>
+
+          }
+
+
+
         </ul>
       </nav>
       <style>{`
