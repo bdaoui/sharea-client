@@ -12,13 +12,6 @@ const Homepage = () => {
   const [search, setSearch] = useState("");
   const [character, setCharacter] = useState("");
   const [allImages, setAllImages] = useState([]);
-//   const [small, setSmall] = useState(null)
-//   const [screen, setScreen] = useState(window.innerWidth)
-
-//  const smScreen = window.innerWidth>500 
-// useEffect(() => {
-//   setSmall(smScreen)
-// }, [screen])
 
 useEffect(() =>{
     service
@@ -40,18 +33,14 @@ useEffect(() =>{
     <div className="flex flex-col bg-gray-50 mt-0">
       <h1 className="bg-sky-400 font-amita tracking-widest font-black text-gray-50 mt-0">Welcome to SHH-AREA, {user && user.username}</h1>
       <Search character={character} setCharacter={setCharacter} />
+      
       <div className="flex flex-row"> 
       
-     <div className="sm:hidden md:flex lg:flex h-screen sticky top-0">
+     <div className="hidden md:flex lg:flex h-screen sticky top-0">
         <Upload />
     </div>
-     
-    
-   
       <Feed allImages={allImages} setAllImages={setAllImages} character={character} />
       </div>
-     
-
       </div>
   );
 };
