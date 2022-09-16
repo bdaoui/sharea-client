@@ -1,5 +1,4 @@
-import React, {useContext, useEffect, useState} from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, {useContext, useState} from 'react';
 import {AuthContext} from '../../Context/Context';
 import Axios from 'axios';
 
@@ -7,7 +6,7 @@ import Axios from 'axios';
 
 const Info = () => {
 const {toggle, setToggle} = useContext(AuthContext)
-const {user, setUser} = useContext(AuthContext)
+const {user} = useContext(AuthContext)
 const [location, setLocation] = useState('')
 const [occupation, setOccupation] = useState('')
 const [info, setInfo] = useState('')

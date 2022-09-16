@@ -7,9 +7,8 @@ import service from "../Context/AppContext";
 
 
 const Homepage = () => {
-  const { user, setUser } = useContext(AuthContext);
-  const {images, setImages} = useContext(AuthContext);
-  const [search, setSearch] = useState("");
+  const { user } = useContext(AuthContext);
+  const {setImages} = useContext(AuthContext);
   const [character, setCharacter] = useState("");
   const [allImages, setAllImages] = useState([]);
 

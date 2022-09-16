@@ -1,14 +1,10 @@
-import { useState , useContext, useEffect} from "react";
+import { useState , useContext} from "react";
 import { AuthContext } from "../../Context/Context";
 
 
 function Search({character, setCharacter}) {
-  const {images, setImages} = useContext(AuthContext);
-  const [filter, setFilter] = useState([])
-
   return (
     <>
- 
   <div class="flex justify-center ">
     <div class="flex justify-center w-3/6 bg-sky-400 px-4 py-2 font-amita text-gray-50 text-lg font-black tracking-widest transition-colors duration-200 transform rounded-md hover:bg-gray-50 hover:text-sky-400 focus:outline-none focus:bg-gray-50 focus:text-sky-400 m-1">
       <input type="search" value={character} onChange={(e) => setCharacter(e.target.value)} class="font-amita form-control relative flex-auto min-w-0 block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" placeholder="Search" aria-label="Search" aria-describedby="button-addon2" />
