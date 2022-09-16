@@ -44,7 +44,7 @@ const handleCommentDelete = (d) => {
 // console.log('hello', image.owner.username, 'comment', image.comments)
 
   return (
-    <div className='h-screen flex bg-gradient-to-r from-gray-500 via-sky-400 to-gray-500 mt-0'>
+    <div className='h-screen flex bg-gradient-to-r from-sky-400 via-gray-50 to-sky-400 mt-0'>
       
 <div className="h-screen overflow-hidden w-48 flex -sky-400 ">
     <div className="w-full p-6 m-auto -sky-400 rounded-md align-middle justify-center">       
@@ -59,7 +59,7 @@ const handleCommentDelete = (d) => {
                 <textarea type="text" className="block w-full h-60 px-4 py-2 mt-2 mb-5 tracking-widest font-amita text-gray-700 -white border rounded-md focus:border-gray-400 focus:ring-gray-300 focus:outline-none focus:ring focus:ring-opacity-40"
                     placeholder='Now that is magic' onChange={(e) => setComment(e.target.value)} value={comment}/>
             </div>           
-            <button className="w-full -space px-4 py-2 font-amita text-gray-50 text-lg font-black tracking-widest transition-colors duration-200 transform rounded-md hover:-gray-600 focus:outline-none focus:-gray-600" type="submit">Comment!!!</button>
+            <button className="w-full bg-space px-4 py-2 font-amita text-gray-50 text-lg font-black tracking-widest transition-colors duration-200 transform rounded-md hover:-gray-600 focus:outline-none focus:-gray-600" type="submit">Comment!!!</button>
         </form>
     </div>
 </div>

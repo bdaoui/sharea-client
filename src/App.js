@@ -21,6 +21,7 @@ function App() {
       <Route element={<OutletComponent /> } >
       <Route path={"/homepage" }  element={<Homepage /> } /> 
       <Route path={"/profile" }  element={<Profile /> } />
+      <Route path={"/profile/:id" }  element={<Profile /> } />
       <Route path={"/image/:id" }  element={<ImageId /> } />
       <Route path={"/" }  element={<Auth /> } />
       <Route path={'*'} element={<Error />} />
@@ -33,6 +34,7 @@ function App() {
     <Route element={<OutletComponent /> } >
     <Route path={"/homepage" }  element={<Auth /> } /> 
     <Route path={"/profile" }  element={<Auth /> } />
+    <Route path={"/profile:id" }  element={<Auth /> } />
     <Route path={"/image/:id" }  element={<Auth /> } />
     <Route path={"/" }  element={<Auth /> } />
     <Route path={'*'} element={<Error />} />

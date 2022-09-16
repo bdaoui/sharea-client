@@ -62,7 +62,7 @@ useEffect (() => {
             </svg>
             </a>
             <span className='font-amita font-semibold text-gray-50 text-sm'>{item.tags}</span>
-            <a className='font-amita font-bold text-gray-50 text-sm' href={`/profile/`}>This image was posted by: {item?.owner?.username}</a>
+            <span className='font-amita font-bold text-gray-50 text-sm'>This image was posted by: {item?.owner?.username}</span>
           {/* get profile by id */}
           </div>
         )})}
