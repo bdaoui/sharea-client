@@ -44,7 +44,7 @@ const handleCommentDelete = (d) => {
 // console.log('hello', image.owner.username, 'comment', image.comments)
 
   return (
-    <div className='h-screen flex bg-gradient-to-r from-sky-400 via-gray-50 to-sky-400 mt-0'>
+    <div className='h-screen flex bg-gradient-to-r from-gray-500 via-sky-400 to-gray-500 mt-0'>
       
 <div className="h-screen overflow-hidden w-48 flex -sky-400 ">
     <div className="w-full p-6 m-auto -sky-400 rounded-md align-middle justify-center">       
@@ -86,7 +86,7 @@ const handleCommentDelete = (d) => {
       
       
       <h3 className='rounded-md font-amita font-black text-gray-50 text-base pt-10' key={comment?._id}>
-        <span>{user.username} broken:</span> {comment?.comment}
+        <span>{comment?.owner?.username} posted: </span> {comment?.comment}
         <svg onClick={() => handleCommentDelete(comment._id)} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-6 h-6 inline ml-10">
       <path stroke-linecap="round" stroke-linejoin="round" d="M15 12H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
       </svg>
