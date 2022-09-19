@@ -20,6 +20,7 @@ useEffect(() =>{
         setSearching(allImages);
       })
       .catch(err => console.log(err));
+      console.log("I got the Images")
 // eslint-disable-next-line react-hooks/exhaustive-deps
 }, [])
 
