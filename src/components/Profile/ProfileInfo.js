@@ -14,7 +14,6 @@ const getUser = () => {
     .then(response => { 
         return setUserInfo(response.data)})
     .catch((err) => console.log(err))  
-
 }
 console.log(userInfo)
 useEffect(() => {

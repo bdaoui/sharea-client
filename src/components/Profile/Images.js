@@ -13,7 +13,9 @@ const Images = () => {
   useEffect(() =>{
     service
       .imagesByOwner(id)
-      .then(allImages =>{setAllImages(allImages)})
+      .then(allImages =>{
+        console.log(allImages)
+        setAllImages(allImages)})
       .catch(err => console.log(err));
 // eslint-disable-next-line react-hooks/exhaustive-deps
 },[] ) 
