@@ -846,9 +846,6 @@ video {
   background-image: linear-gradient(to right, var(--tw-gradient-stops));
 }
 
-.bg-space {
-  background-image: url('/src/Assets/background.jpg');
-}
 
 .from-sky-400 {
   --tw-gradient-from: #38bdf8;
