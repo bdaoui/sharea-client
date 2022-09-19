@@ -57,7 +57,8 @@ return (
                   placeholder='Initiate a tag with #,
                   Use commas to seperate tags' onChange={(e) => setTags(e.target.value)} value={tags}/>
           </div>
-          <button className="w-full bg-space px-4 py-2 font-amita text-gray-50 text-lg font-black tracking-widest transition-colors duration-200 transform rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600" type="submit">Upload Image!!!</button>
+          <button className="w-full bg-neutral-500
+ px-4 py-2 font-amita text-gray-50 text-lg font-black tracking-widest transition-colors duration-200 transform rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600" type="submit">Upload Image!!!</button>
       </form>
   </div>
 </div>

@@ -58,7 +58,8 @@ const handleCommentDelete = (d) => {
                 <textarea type="text" className="block w-full h-60 px-4 py-2 mt-2 mb-5 tracking-widest font-amita text-gray-700 border rounded-md focus:border-gray-400 focus:ring-gray-300 focus:outline-none focus:ring focus:ring-opacity-40"
                     placeholder='Now that is magic' onChange={(e) => setComment(e.target.value)} value={comment}/>
             </div>           
-            <button className="w-full bg-space px-4 py-2 font-amita text-gray-50 text-lg font-black tracking-widest transition-colors duration-200 transform rounded-md hover:-gray-600 focus:outline-none focus:-gray-600" type="submit">Comment!!!</button>
+            <button className="w-full bg-neutral-500
+ px-4 py-2 font-amita text-gray-50 text-lg font-black tracking-widest transition-colors duration-200 transform rounded-md hover:-gray-600 focus:outline-none focus:-gray-600" type="submit">Comment!!!</button>
         </form>
     </div>
 </div>
