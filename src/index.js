@@ -9,15 +9,15 @@ import { Context } from './context/Context';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-
+  <Router>
     <Context >
-      <Router>
+    
  
       <App />
     
-      </Router>
     </Context>
   
+    </Router>
 );
 
 // If you want to start measuring performance in your app, pass a function
