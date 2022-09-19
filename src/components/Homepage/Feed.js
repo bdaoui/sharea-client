@@ -1,6 +1,6 @@
 import React, {useState, useEffect, useContext} from 'react';
 import {Link} from "react-router-dom";
-import service from "../../context/AppContext";
+// import service from "../../context/AppContext";
 import Box from '@mui/material/Box';
 import Masonry from '@mui/lab/Masonry';
 import { AuthContext } from '../../context/Context';
@@ -10,19 +10,18 @@ import { AuthContext } from '../../context/Context';
 const Feed = ({allImages, setAllImages, character}) => {
 const [searching, setSearching]= useState(allImages)
 const {user} = useContext(AuthContext)
-console.log(user)
 
-useEffect(() =>{
-  service
-      .image()
-      .then(allImages =>{
-        setAllImages(allImages);
-        setSearching(allImages);
-      })
-      .catch(err => console.log(err));
-      console.log("I got the Images ", allImages)
-// eslint-disable-next-line react-hooks/exhaustive-deps
-}, [])
+// useEffect(() =>{
+//   service
+//       .image()
+//       .then(allImages =>{
+//         setAllImages(allImages);
+//         setSearching(allImages);
+//         console.log("I got the Images ", allImages)
+//       })
+//       .catch(err => console.log(err));
+// // eslint-disable-next-line react-hooks/exhaustive-deps
+// }, [])
 
 useEffect (() => {
     const filterName = allImages.filter(picture => { 
