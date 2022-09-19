@@ -16,6 +16,7 @@ const LoginForm = () => {
         Axios
             .post("https://smoggy-yak-top-hat.cyclic.app/api/signin", { username, password })
             .then(response => {
+                console.log(response)
                 localStorage.setItem("token", JSON.stringify(response.data))
                 setUser(response.data)
             })
