@@ -14,10 +14,8 @@ const Images = () => {
     service
       .imagesByOwner(id)
       .then(allImages =>{
-        console.log(allImages)
         setAllImages(allImages)})
       .catch(err => console.log(err));
-// eslint-disable-next-line react-hooks/exhaustive-deps
 },[] ) 
 
 const handleDelete = (d) => {
