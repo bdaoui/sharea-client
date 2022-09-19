@@ -19,6 +19,8 @@ const image = () => {
     .catch(errorHandler);
 };
 
+
+
 const uploadImage = (file) => {
   return service
     .post("/upload", file)
