@@ -23,7 +23,7 @@ function Context(props) {
   
   useEffect(() => { 
     authenticateUser();
-  },[user]);
+  },[setUser]);
 
   return (
     <AuthContext.Provider value={{user, setUser, toggle, setToggle, images, setImages}}>
