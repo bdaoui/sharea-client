@@ -85,7 +85,7 @@ const SignUpForm = () => {
                         </button>
                     </div>
 
-                    <Link className='text-gray-50 font-semibold font-amita text-lg mt-10' onClick={toggler}>ALREADY PART OF THE FAMILY? <button className='font-black text-xl mt-10'> LOG IN</button></Link>
+                    <h2 className='text-gray-50 font-semibold font-amita text-lg mt-10' onClick={toggler}>ALREADY PART OF THE FAMILY? <button className='font-black text-xl mt-10'> LOG IN</button></h2>
                 
 
                 </form>

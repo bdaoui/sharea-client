@@ -38,7 +38,7 @@ useEffect(() =>{
             />
             <p className='rounded-md font-amita font-black text-gray-50 text-lg'>This image was posted by: {item.author}</p>
             <span className='font-amita font-semibold text-gray-50 text-sm'>Want this image? Click below</span><br></br>
-            <Link className='font-amita font-bold text-gray-50 text-base italic' href={item.url} target="_blank">{item.url}</Link>
+            <Link to={item.url} className='font-amita font-bold text-gray-50 text-base italic'  target="_blank">{item.url}</Link>
           </div>
         ))}
       </Masonry>

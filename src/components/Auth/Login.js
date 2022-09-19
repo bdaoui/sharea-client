@@ -77,7 +77,7 @@ const LoginForm = () => {
                 </button>
             </div>
 
-            <Link className='text-gray-50 font-semibold font-amita text-lg mt-10' onClick={toggler}>Need an account? <button className='font-semibold text-xl mt-10'> Sign up</button></Link>
+            <h2 className='text-gray-50 font-semibold font-amita text-lg mt-10' onClick={toggler}>Need an account? <button className='font-semibold text-xl mt-10'> Sign up</button></h2>
 
         </form>
     </div>
