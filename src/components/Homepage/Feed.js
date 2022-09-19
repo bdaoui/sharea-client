@@ -20,7 +20,6 @@ useEffect(() =>{
         setSearching(allImages);
       })
       .catch(err => console.log(err));
-      // eslint-disable-next-line 
 }, [])
 
 useEffect (() => {
@@ -40,7 +39,6 @@ useEffect (() => {
         return doubles.indexOf(element) === index;
     });
     setSearching((uniqueChars))
-    // eslint-disable-next-line react-hooks/exhaustive-deps
 } ,[character])
 
   return (
