@@ -14,6 +14,7 @@ function Context(props) {
     const token = await JSON.parse(localStorage.getItem("token"));  
     if(token){
       await setUser(token)
+      console.log(token)
     }
     else{
       console.log("not working")
@@ -22,7 +23,7 @@ function Context(props) {
   
   useEffect(() => { 
     authenticateUser();
-  },[]);
+  },[user]);
 
   return (
     <AuthContext.Provider value={{user, setUser, toggle, setToggle, images, setImages}}>
