@@ -46,7 +46,7 @@ const handleCommentDelete = (d) => {
     <div className='h-screen flex bg-gradient-to-r from-sky-400 via-gray-50 to-sky-400 mt-0'>
       
 <div className="hidden md:flex lg:flex h-screen overflow-hidden w-48 -sky-400 ">
-    <div className="w-full p-6 m-auto -sky-400 rounded-md align-middle justify-center">       
+    <div className="w-full p-6 m-auto rounded-md align-middle justify-center">       
         <h1 className="text-3xl text-gray-50 font-amita font-semibold text-center uppercase decoration-wavy">
             Add your comment
         </h1>
@@ -55,7 +55,7 @@ const handleCommentDelete = (d) => {
                 <label for="comment" className="block text-base text-gray-50 font-amita font-semibold">
                     Comment goes here: 
                 </label>
-                <textarea type="text" className="block w-full h-60 px-4 py-2 mt-2 mb-5 tracking-widest font-amita text-gray-700 -white border rounded-md focus:border-gray-400 focus:ring-gray-300 focus:outline-none focus:ring focus:ring-opacity-40"
+                <textarea type="text" className="block w-full h-60 px-4 py-2 mt-2 mb-5 tracking-widest font-amita text-gray-700 border rounded-md focus:border-gray-400 focus:ring-gray-300 focus:outline-none focus:ring focus:ring-opacity-40"
                     placeholder='Now that is magic' onChange={(e) => setComment(e.target.value)} value={comment}/>
             </div>           
             <button className="w-full bg-space px-4 py-2 font-amita text-gray-50 text-lg font-black tracking-widest transition-colors duration-200 transform rounded-md hover:-gray-600 focus:outline-none focus:-gray-600" type="submit">Comment!!!</button>
@@ -71,15 +71,15 @@ const handleCommentDelete = (d) => {
 
 
 <div className='flex-1 flex flex-col overflow-hidden'>
-<div className='flex-1 overflow-y-scroll -sky-400' >
+<div className='flex-1 overflow-y-scroll ' >
        <div className='pb-10'>
       <h3 className='font-amita font-black text-gray-50 text-3xl pt-5'>{image?.name}</h3>
-      <h5 className='font-amita font-black -sky-400 text-gray-50 text-lg p-1'>{image?.tags}</h5>
+      <h5 className='font-amita font-black text-gray-50 text-lg p-1'>{image?.tags}</h5>
       <h6 className='font-amita font-black text-gray-50 text-lg p-5'>Image posted by: {image?.owner?.username}</h6> 
       </div>
       
 
-      <div className='-sky-400 fill-sky-400'>
+      <div className=' fill-sky-400'>
         <h1 className='text-gray-50 font-black text-3xl tracking-widest'>Comments: </h1>
       {image?.comments?.map(comment => 
       
