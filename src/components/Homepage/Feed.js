@@ -8,7 +8,7 @@ import { AuthContext } from '../../context/Context';
 //here
 
 const Feed = ({allImages, setAllImages, character}) => {
-const [searching, setSearching]= useState([])
+const [searching, setSearching]= useState(allImages)
 const {user} = useContext(AuthContext)
 
 // useEffect(() =>{
@@ -24,6 +24,7 @@ const {user} = useContext(AuthContext)
 // }, [])
  
 console.log("The List", searching);
+console.log("The List", allImages);
 
 useEffect (() => {
     const filterName = allImages.filter(picture => { 
