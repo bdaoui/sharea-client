@@ -23,7 +23,7 @@ const {user} = useContext(AuthContext)
 // // eslint-disable-next-line react-hooks/exhaustive-deps
 // }, [])
  
-console.log(searching);
+console.log("The List", searching);
 
 useEffect (() => {
     const filterName = allImages.filter(picture => { 
@@ -48,8 +48,8 @@ useEffect (() => {
     <div className='bg-gray-50'>
     <Box> 
       <Masonry className='bg-gray-50' columns={{sm:1, md:2, lg:3}} spacing={1}>
-        {allImages && 
-          allImages.map((item, index) => {
+        {searching && 
+        searching.map((item, index) => {
           return (
           <div className='flex flex-col bg-sky-400 rounded p-1 shadow duration-300 shadow-neutral-900 hover:shadow-xl' key={item._id}>
             <img
