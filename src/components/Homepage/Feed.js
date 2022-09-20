@@ -8,7 +8,7 @@ import { AuthContext } from '../../context/Context';
 //here
 
 const Feed = ({allImages, setAllImages, character}) => {
-const [searching, setSearching]= useState(allImages)
+const [searching, setSearching]= useState([])
 const {user} = useContext(AuthContext)
 
 // useEffect(() =>{
@@ -43,6 +43,12 @@ useEffect (() => {
     });
     setSearching((uniqueChars))
 } ,[character])
+
+
+useEffect(() =>{
+  setSearching(allImages)
+}, [searching])
+
 
   return (
     <div className='bg-gray-50'>
