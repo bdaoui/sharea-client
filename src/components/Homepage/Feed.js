@@ -24,7 +24,7 @@ const {user} = useContext(AuthContext)
 // }, [])
  
 console.log("The List", searching);
-console.log("The List", allImages);
+console.log("The Images", allImages);
 
 useEffect (() => {
     const filterName = allImages.filter(picture => { 
