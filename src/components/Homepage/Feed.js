@@ -23,6 +23,8 @@ const {user} = useContext(AuthContext)
 // // eslint-disable-next-line react-hooks/exhaustive-deps
 // }, [])
 
+console.log(allImages);
+
 useEffect (() => {
     const filterName = allImages.filter(picture => { 
       return picture.name.toLowerCase().includes(character.toLowerCase())});
