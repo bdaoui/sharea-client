@@ -24,7 +24,6 @@ function App() {
       <Route path={"/profile/:id" }  element={<Profile /> } />
       <Route path={"/image/:id" }  element={<ImageId /> } />
       <Route path={"/" }  element={<Auth /> } />
-      <Route path={'*'} element={<Error />} />
       </Route>
     </Routes>
     }
@@ -37,7 +36,6 @@ function App() {
     <Route path={"/profile:id" }  element={<Auth /> } />
     <Route path={"/image/:id" }  element={<Auth /> } />
     <Route path={"/" }  element={<Auth /> } />
-    <Route path={'*'} element={<Error />} />
     </Route>
   </Routes>
   }
