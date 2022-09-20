@@ -47,7 +47,7 @@ useEffect (() => {
 
 
 useEffect(() =>{
-  setSearching({...allImages, allImages})
+  setSearching(allImages)
   console.log("Please change ,", searching)
 }, [])
 
