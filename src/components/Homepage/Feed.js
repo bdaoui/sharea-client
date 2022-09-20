@@ -4,7 +4,6 @@ import {Link} from "react-router-dom";
 import Box from '@mui/material/Box';
 import Masonry from '@mui/lab/Masonry';
 import { AuthContext } from '../../context/Context';
-import service from "../context/AppContext";
 
 //here
 
@@ -12,17 +11,17 @@ const Feed = ({allImages, setAllImages, character}) => {
 const [searching, setSearching]= useState(allImages)
 const {user} = useContext(AuthContext)
 
-useEffect(() =>{
-  service
-      .image()
-      .then(allImages =>{
-        setAllImages(allImages);
-        setSearching(allImages);
-        console.log("I got the Images ", allImages)
-      })
-      .catch(err => console.log(err));
-// eslint-disable-next-line react-hooks/exhaustive-deps
-}, [])
+// useEffect(() =>{
+//   service
+//       .image()
+//       .then(allImages =>{
+//         setAllImages(allImages);
+//         setSearching(allImages);
+//         console.log("I got the Images ", allImages)
+//       })
+//       .catch(err => console.log(err));
+// // eslint-disable-next-line react-hooks/exhaustive-deps
+// }, [])
  
 console.log("The List", searching);
 
