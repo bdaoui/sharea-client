@@ -22,8 +22,8 @@ const {user} = useContext(AuthContext)
 //       .catch(err => console.log(err));
 // // eslint-disable-next-line react-hooks/exhaustive-deps
 // }, [])
-
-console.log(allImages);
+ 
+console.log(searching);
 
 useEffect (() => {
     const filterName = allImages.filter(picture => { 
